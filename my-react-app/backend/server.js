@@ -7,8 +7,12 @@ const cors = require('cors');
 // Enable CORS for all origins
 app.use(cors({ origin: '*' }));
 
-
 app.use(express.json());
+
+// Define a route handler for the root path ("/")
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
 app.post('/payment', (req, res) => {
   const creditCardInfo = req.body;

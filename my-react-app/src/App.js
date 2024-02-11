@@ -4,6 +4,7 @@ import SubscriptionPlan from './components/SubscriptionPlan';
 import SubscriptionConfirmation from './components/SubscriptionConfirmation';
 import CheckoutPage from './components/CheckoutPage';
 import ThankYou from './components/ThankYou'; // Make sure to import ThankYouPage
+import PaymentInfo from './components/PaymentInfo';
 import "./App.css";
 
 function App() {
@@ -25,11 +26,16 @@ function App() {
           path="/thank-you" 
           element={<ThankYou/>} // Remove selectedPlan prop
         />
+          <Route 
+          path="/payment-info" // Define the path for the PaymentInfo component
+          element={<PaymentInfo/>} // Render the PaymentInfo component
+        />
         {selectedPlan && 
           <Route 
             path="/checkout" 
             element={<CheckoutPage selectedPlan={selectedPlan} />} // Pass selectedPlan to CheckoutPage
           />
+          
         }
       </Routes>
     </Router>
