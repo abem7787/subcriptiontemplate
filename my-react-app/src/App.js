@@ -5,6 +5,8 @@ import SubscriptionConfirmation from './components/SubscriptionConfirmation';
 import CheckoutPage from './components/CheckoutPage';
 import ThankYou from './components/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/PaymentInfo';
+import LandingPage from "./components/LandingPage"
+
 import "./App.css";
 
 function App() {
@@ -13,10 +15,16 @@ function App() {
   return (
     <Router>
       <Routes>
+        
         <Route 
           exact 
           path="/" 
           element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+        <Route 
+          exact 
+          path="/landingpage" 
+          element={<LandingPage setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
         />
         <Route 
           path="/confirmation" 
@@ -41,5 +49,6 @@ function App() {
     </Router>
   );
 }
+
 
 export default App;

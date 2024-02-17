@@ -1,9 +1,13 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom'; // Import useLocation hook
 import "../App.css";
 
-const ThankYou = ({ location }) => {
-  // Add null check for location and location.state
-  if (!location || !location.state) {
+const ThankYou = () => {
+  const location = useLocation(); // Use useLocation hook to access location
+  const state = location.state; // Extract state from location
+
+  // Add null check for state
+  if (!state) {
     return (
       <div className="thank-you-container">
         <h2>Thank You for Your Payment!</h2>
@@ -12,7 +16,7 @@ const ThankYou = ({ location }) => {
     );
   }
 
-  const { selectedPlan, customerName, cardName } = location.state;
+  const { selectedPlan, customerName, cardName } = state; // Destructure state
 
   return (
     <div className="thank-you-container">

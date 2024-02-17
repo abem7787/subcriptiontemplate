@@ -9,11 +9,29 @@ const SubscriptionPlan = () => {
     setSelectedPlan(plan);
   };
 
-  const handleSubscribe = (plan) => {
+  const handleSubscribe = async (plan) => {
     if (plan) {
       console.log(`Subscribed to ${plan.name} plan.`);
-      // Navigate to the confirmation page with selected plan as state
-      navigate('/confirmation', { state: { selectedPlan: plan } });
+      
+      try {
+        // Send a POST request to the server with the selected plan
+        const response = await fetch('http://localhost:3000/subscription', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ selectedPlan: plan })
+        });
+
+        if (response.ok) {
+          console.log('Subscription processed successfully');
+          navigate('/confirmation', { state: { selectedPlan: plan }});
+        } else {
+          console.error('Subscription failed:', response.statusText);
+        }
+      } catch (error) {
+        console.error('Error processing subscription:', error);
+      }
     } else {
       alert('Please select a subscription plan.');
     }
