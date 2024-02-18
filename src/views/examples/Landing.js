@@ -64,7 +64,7 @@ class Landing extends React.Component {
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
                           <h1 className="display-3 text-white">
-                            A beautiful Design System
+                          INCREQ Workflow Design System
                             <span>completed with examples</span>
                           </h1>
 
@@ -111,9 +111,9 @@ class Landing extends React.Component {
                         <Col className="mb-5 mb-lg-0" md="6">
                           <Card className="card-lift--hover shadow border-0">
                             <Link to="/profile-page">
-                              <CardImg
+                              <CardImg class="h-10"
                                 alt="..."
-                                src={require("assets/img/theme/profile.jpg")}
+                                src={require("assets/img/brand/increqmain.png")}
                               />
                             </Link>
                           </Card>
@@ -159,12 +159,10 @@ class Landing extends React.Component {
                             <i className="ni ni-check-bold" />
                           </div>
                           <h6 className="text-primary text-uppercase">
-                            Download Argon
+                          Centralized Task Management
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          Centralized Task Management: Work management software provides a centralized platform where teams can create, assign, and track tasks and projects. 
                           </p>
                           <div>
                             <Badge color="primary" pill className="mr-1">
@@ -195,12 +193,10 @@ class Landing extends React.Component {
                             <i className="ni ni-istanbul" />
                           </div>
                           <h6 className="text-success text-uppercase">
-                            Build Something
+                          Collaboration and Communication: 
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          Effective communication and collaboration are essential for project success. Work management software facilitates collaboration by providing features such as file sharing, commenting, and real-time messaging.
                           </p>
                           <div>
                             <Badge color="success" pill className="mr-1">
@@ -231,12 +227,10 @@ class Landing extends React.Component {
                             <i className="ni ni-planet" />
                           </div>
                           <h6 className="text-warning text-uppercase">
-                            Prepare Launch
+                          Performance Tracking and Reporting: 
                           </h6>
                           <p className="description mt-3">
-                            Argon is a great free UI package based on Bootstrap
-                            4 that includes the most important components and
-                            features.
+                          Work management software offers robust reporting and analytics capabilities that enable organizations to track performance, identify bottlenecks, and make data-driven decisions
                           </p>
                           <div>
                             <Badge color="warning" pill className="mr-1">
@@ -272,8 +266,9 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/theme/promo-1.png")}
+                    src={require("assets/img/brand/increqimg2.png")}
                   />
+
                 </Col>
                 <Col className="order-md-1" md="6">
                   <div className="pr-md-5">
@@ -282,9 +277,7 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    Traditional task management tools allow users to set dependencies between tasks, specifying that Task B cannot start until Task A is completed, for example. However, with dynamic task dependencies, the software takes this concept to the next level by automatically adjusting task dependencies based on real-time changes and conditions.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -373,9 +366,7 @@ class Landing extends React.Component {
                         Design System
                       </h4>
                       <p className="lead text-italic text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever happens.
+                      The design system begins with a set of core principles that guide all design decisions. These principles reflect the brand values, user needs, and business objectives, providing a framework for creating cohesive and meaningful experiences.
                       </p>
                     </blockquote>
                   </Card>
@@ -387,19 +378,13 @@ class Landing extends React.Component {
                     </div>
                     <h3>Our customers</h3>
                     <p className="lead">
-                      Don't let your uses guess by attaching tooltips and
-                      popoves to any element. Just make sure you enable them
-                      first via JavaScript.
+                    Diverse Industries and Sectors: Our work management software caters to a wide range of industries and sectors, including technology, finance, healthcare, manufacturing, education, and more. From small startups to large enterprises, our software is designed to meet the needs of organizations of all sizes and complexities. 
                     </p>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    Whether it's a software development team managing agile projects or a marketing department overseeing campaign launches, our software provides the tools and features needed to streamline workflows and boost productivity.
                     </p>
                     <p>
-                      The kit comes with three pre-built pages to help you get
-                      started faster. You can change the text and images and
-                      you're good to go.
+                    We prioritize customer feedback and insights, continuously iterating and improving our software based on user needs and preferences. Through personalized support, comprehensive training resources, and proactive communication, we ensure that our customers receive the guidance and assistance they need to maximize the benefits of our software
                     </p>
                     <a
                       className="font-weight-bold text-warning mt-5"
@@ -421,7 +406,7 @@ class Landing extends React.Component {
                     <img
                       alt="..."
                       className="img-center img-fluid"
-                      src={require("assets/img/ill/ill-2.svg")}
+                      src={require("assets/img/theme/promo-1.png")}
                     />
                   </div>
                 </Col>
@@ -435,9 +420,7 @@ class Landing extends React.Component {
                     <div className="pl-4">
                       <h4 className="display-3 text-white">Modern Interface</h4>
                       <p className="text-white">
-                        The Arctic Ocean freezes every winter and much of the
-                        sea-ice then thaws every summer, and that process will
-                        continue whatever.
+                      : Flat design, characterized by its absence of gradients, shadows, and three-dimensional effects, is a hallmark of modern interfaces. Flat design elements such as flat icons, buttons, and illustrations contribute to a sleek and contemporary aesthetic.
                       </p>
                     </div>
                   </div>
@@ -454,9 +437,7 @@ class Landing extends React.Component {
                             Awesome Support
                           </h5>
                           <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
+                          Awesome support entails prompt and responsive communication channels that allow customers to reach out for assistance easily. Whether it's through live chat, email, phone support, or social media platforms, customers expect quick responses to their queries and concerns.
                           </p>
                           <a
                             className="text-success"
@@ -523,9 +504,7 @@ class Landing extends React.Component {
                 <Col lg="8">
                   <h2 className="display-3">The amazing Team</h2>
                   <p className="lead text-muted">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record maximum.
+                  An amazing team is the backbone of any successful endeavor, whether it's a business, project, or initiative. Here are some characteristics that define an amazing team:
                   </p>
                 </Col>
               </Row>
@@ -541,7 +520,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Web Developer</small>
+                        <small className="h6 text-muted">Developer</small>
                       </h5>
                       <div className="mt-3">
                         <Button
@@ -627,7 +606,7 @@ class Landing extends React.Component {
                     <div className="pt-4 text-center">
                       <h5 className="title">
                         <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">UI/UX Designer</small>
+                        <small className="h6 text-muted">Designer</small>
                       </h5>
                       <div className="mt-3">
                         <Button
@@ -704,46 +683,15 @@ class Landing extends React.Component {
             </Container>
           </section>
           <section className="section section-lg pt-0">
-            <Container>
-              <Card className="bg-gradient-warning shadow-lg border-0">
-                <div className="p-5">
-                  <Row className="align-items-center">
-                    <Col lg="8">
-                      <h3 className="text-white">
-                        We made website building easier for you.
-                      </h3>
-                      <p className="lead text-white mt-3">
-                        I will be the leader of a company that ends up being
-                        worth billions of dollars, because I got the answers. I
-                        understand culture.
-                      </p>
-                    </Col>
-                    <Col className="ml-lg-auto" lg="3">
-                      <Button
-                        block
-                        className="btn-white"
-                        color="default"
-                        href="https://www.creative-tim.com/product/argon-design-system-react?ref=adsr-landing-page"
-                        size="lg"
-                      >
-                        Download React
-                      </Button>
-                    </Col>
-                  </Row>
-                </div>
-              </Card>
-            </Container>
+            
           </section>
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
               <Row className="text-center justify-content-center">
                 <Col lg="10">
-                  <h2 className="display-3 text-white">Build something</h2>
+                  <h2 className="display-3 text-white">Create a Project Plan</h2>
                   <p className="lead text-white">
-                    According to the National Oceanic and Atmospheric
-                    Administration, Ted, Scambos, NSIDClead scentist, puts the
-                    potentially record low maximum sea ice extent tihs year down
-                    to low ice.
+                  Develop a detailed project plan outlining the tasks, milestones, timelines, and dependencies. Break down the project into manageable phases or iterations to facilitate execution and tracking.
                   </p>
                 </Col>
               </Row>
