@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 // import "App.css";
 
-const CheckoutPage = ({ selectedPlan,  customerName}) => {
+const CheckoutPage = ({ selectedPlan, customerName }) => {
   const [creditCardInfo, setCreditCardInfo] = useState({
     cardNumber: '',
     expirationDate: '',
@@ -14,18 +14,23 @@ const CheckoutPage = ({ selectedPlan,  customerName}) => {
 
   const handlePayment = async () => {
     try {
-      const response = await fetch('http://localhost:3000/payment', {
+      const paymentData = {
+        creditCardInfo: creditCardInfo,
+        selectedPlan: selectedPlan,
+        customerName: customerName
+      };
+  
+      const response = await fetch('http://localhost:3001/payment', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify(creditCardInfo)
+        body: JSON.stringify(paymentData)
       });
-
+  
       if (response.ok) {
-
         console.log('Payment successful!');
-        navigate('/thank-you', { state: { selectedPlan,  customerName}});
+        navigate('/ThankYou', { state: { selectedPlan, customerName }});
       } else {
         console.error('Payment failed:', response.statusText);
       }
@@ -47,8 +52,8 @@ const CheckoutPage = ({ selectedPlan,  customerName}) => {
     <div className="checkout-container">
       <h2>Checkout</h2>
       <div className="selected-plan">
-        <h3>{selectedPlan.name}</h3>
-        <p>${selectedPlan.price}/month</p>
+        <h3>{selectedPlan ? selectedPlan.name : ''}</h3>
+        <p>${selectedPlan ? selectedPlan.price : ''}/month</p>
       </div>
       <div className="credit-card-form">
         <label htmlFor="cardNumber">Card Number:</label>

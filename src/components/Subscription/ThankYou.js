@@ -20,7 +20,7 @@ const ThankYou = () => {
 
   return (
     <div className="thank-you-container">
-      <h2>Thank You, {customerName}, for Your Payment!</h2>
+      <h2>Thank You{customerName}, for Your Payment!</h2>
       <p>We have received your payment. Thank you for choosing our service.</p>
       {selectedPlan && (
         <div className="plan-details">

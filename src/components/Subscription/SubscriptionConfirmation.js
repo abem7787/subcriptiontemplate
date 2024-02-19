@@ -9,7 +9,7 @@ const SubscriptionConfirmation = ({ setSelectedPlan }) => {
   const handleConfirm = () => {
     console.log(`Confirmed subscription to ${selectedPlan.name} plan.`);
     setSelectedPlan(selectedPlan); // Set selectedPlan using the passed setSelectedPlan function
-    navigate('/checkout');
+    navigate('/CheckoutPage');
   };
 
   const handleBack = () => {

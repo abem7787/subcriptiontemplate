@@ -11,15 +11,16 @@ import Register from "views/examples/Register.js";
 
 
 import SubscriptionPlan from './components/Subscription/SubscriptionPlan.js';
-// import SubscriptionConfirmation from './components/Subscription/SubscriptionConfirmation';
-// import CheckoutPage from './components/Subscription/CheckoutPage';
-// import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
-// import PaymentInfo from './components/Subscription/PaymentInfo';
+import SubscriptionConfirmation from './components/Subscription/SubscriptionConfirmation';
+import CheckoutPage from './components/Subscription/CheckoutPage';
+import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
+import PaymentInfo from './components/Subscription/PaymentInfo';
 
 import "./App.css";
 
 function App() {
-  const [setSelectedPlan] = useState(null);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
 
   return (
     <BrowserRouter>
@@ -33,11 +34,37 @@ function App() {
           path="/subscriptionplan" 
           element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
         />
-        {/* other routes */}
+         <Route 
+          exact 
+          path="/SubscriptionConfirmation" 
+          element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+         <Route 
+          exact 
+          path="/CheckoutPage" 
+          element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+         <Route 
+          exact 
+          path="/ThankYou" 
+          element={<ThankYou setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+
+          <Route 
+          exact 
+          path="/CheckoutPage" 
+          element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+
+         <Route 
+          exact 
+          path="/PaymentInfo" 
+          element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
       </Routes>
     </BrowserRouter>
   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<App />);
+root.render(<App/>);
