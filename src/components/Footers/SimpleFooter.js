@@ -91,14 +91,7 @@ class SimpleFooter extends React.Component {
               <Col md="6">
                 <div className=" copyright">
                   © {new Date().getFullYear()}{" "}
-                  <a
-                   
-                    target="_blank"
-                  >
-    
-                  </a>
-                  .
-                </div>
+                  </div>
               </Col>
               <Col md="6">
                 <Nav className=" nav-footer justify-content-end">
