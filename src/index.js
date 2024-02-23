@@ -10,7 +10,13 @@ import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import AdminPanel from "./components/Admin/AdminPanel"
 
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./assets/css/animate.min.css";
+import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
+import "./assets/css/demo.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
+import AdminLayout from "layouts/Admin.js";
 
 import SubscriptionPlan from './components/Subscription/SubscriptionPlan.js';
 import SubscriptionConfirmation from './components/Subscription/SubscriptionConfirmation';
@@ -67,6 +73,7 @@ function App() {
           path="/AdminPanel" 
           element={<AdminPanel setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
         />
+         <Route path="/admin" element={<AdminLayout />} />
       </Routes>
     </BrowserRouter>
   );
