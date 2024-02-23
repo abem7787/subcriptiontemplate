@@ -27,41 +27,47 @@ const Register = () => {
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const inputValue = type === 'checkbox' ? checked : value; // Handle checkbox input differently
     setFormData({
       ...formData,
-      [name]: value,
+      [name]: inputValue,
     });
   };
-
   const handleCreateAccount = async () => {
-  try {
-    // Add logic to validate form inputs
-    if (formData.name && formData.email && formData.password) {
-      const response = await fetch('http://localhost:3001/subscription', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-      });
-
-      if (response.ok) {
-        // If registration is successful, navigate to '/subscriptionplan'
-        navigate("/subscriptionplan");
+    try {
+      // Add logic to validate form inputs
+      if (formData.name && formData.email && formData.password) {
+        const privacyPolicyChecked = document.getElementById('customCheckRegister').checked;
+        if (privacyPolicyChecked) {
+          const response = await fetch('http://localhost:3001/subscription', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+          });
+  
+          if (response.ok) {
+            // If registration is successful, navigate to '/subscriptionplan'
+            navigate("/subscriptionplan");
+          } else {
+            // Handle error response
+            console.error('Registration failed:', response.statusText);
+          }
+        } else {
+          // Notify the user to agree to the privacy policy
+          alert("Please agree to the Privacy Policy");
+        }
       } else {
-        // Handle error response
-        console.error('Registration failed:', response.statusText);
+        // If any input is empty, show an alert or handle the error
+        alert("Please fill in all fields");
       }
-    } else {
-      // If any input is empty, show an alert or handle the error
-      alert("Please fill in all fields");
+    } catch (error) {
+      console.error('Error occurred during registration:', error);
     }
-  } catch (error) {
-    console.error('Error occurred during registration:', error);
-  }
-};
-
+  };
+  
 
   return (
     <>

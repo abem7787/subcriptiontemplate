@@ -8,6 +8,8 @@ import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
+import AdminPanel from "./components/Admin/AdminPanel"
+
 
 
 import SubscriptionPlan from './components/Subscription/SubscriptionPlan.js';
@@ -15,7 +17,6 @@ import SubscriptionConfirmation from './components/Subscription/SubscriptionConf
 import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
-
 import "./App.css";
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
         <Route path="/login-page" exact element={<Login />} />
         <Route path="/profile-page" exact element={<Profile />} />
         <Route path="/register-page" exact element={<Register />} />
-        <Route path="/" exact element={<Landing />} />
+        <Route path="/" exact element={<Landing/>} />
         <Route 
           exact 
           path="/subscriptionplan" 
@@ -60,6 +61,11 @@ function App() {
           exact 
           path="/PaymentInfo" 
           element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
+        />
+           <Route 
+          exact 
+          path="/AdminPanel" 
+          element={<AdminPanel setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
         />
       </Routes>
     </BrowserRouter>
