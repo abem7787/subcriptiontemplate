@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import React, { useState } from 'react';
 import "assets/vendor/nucleo/css/nucleo.css";
 import "assets/vendor/font-awesome/css/font-awesome.min.css";
@@ -23,57 +23,30 @@ import SubscriptionConfirmation from './components/Subscription/SubscriptionConf
 import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
-import "./App.css";
+import Dashboard from "./layouts/Dashboard";
 
+import "./App.css";
 function App() {
   const [selectedPlan, setSelectedPlan] = useState(null);
 
-
+  console.log(selectedPlan)
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login-page" exact element={<Login />} />
-        <Route path="/profile-page" exact element={<Profile />} />
-        <Route path="/register-page" exact element={<Register />} />
-        <Route path="/" exact element={<Landing/>} />
-        <Route 
-          exact 
-          path="/subscriptionplan" 
-          element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-         <Route 
-          exact 
-          path="/SubscriptionConfirmation" 
-          element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-         <Route 
-          exact 
-          path="/CheckoutPage" 
-          element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-         <Route 
-          exact 
-          path="/ThankYou" 
-          element={<ThankYou setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-
-          <Route 
-          exact 
-          path="/CheckoutPage" 
-          element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-
-         <Route 
-          exact 
-          path="/PaymentInfo" 
-          element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-           <Route 
-          exact 
-          path="/AdminPanel" 
-          element={<AdminPanel setSelectedPlan={setSelectedPlan} />} // Pass setSelectedPlan to SubscriptionPlan
-        />
-         <Route path="/admin" element={<AdminLayout />} />
+        <Route path="/login-page" element={<Login />} />
+        <Route path="/profile-page" element={<Profile />} />
+        <Route path="/register-page" element={<Register />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/subscriptionplan" element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} />
+        <Route path="/SubscriptionConfirmation" element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} />
+        <Route path="/CheckoutPage" element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} />
+        <Route path="/ThankYou" element={<ThankYou setSelectedPlan={setSelectedPlan} />} />
+        <Route path="/PaymentInfo" element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} />
+        <Route path="/admin/*" element={<AdminLayout/>}>
+          {/* Routes under /admin */}
+          <Route path="dashboard" element={<Dashboard/>} />
+          <Route path="AdminPanel" element={<AdminPanel setSelectedPlan={setSelectedPlan} />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );

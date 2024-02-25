@@ -1,5 +1,5 @@
 
-import Dashboard from "views/Dashboard.js";
+import Dashboard from "./layouts/Dashboard";
 import UserProfile from "views/UserProfile.js";
 import TableList from "views/TableList.js";
 import Typography from "views/Typography.js";
@@ -18,7 +18,7 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/dashboard",
+    path: "/admin",
     name: "Dashboard",
     icon: "nc-icon nc-chart-pie-35",
     component: Dashboard,
