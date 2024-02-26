@@ -7,7 +7,7 @@ const SubscriptionConfirmation = ({ setSelectedPlan }) => {
   const { selectedPlan } = location.state || {};
 
   const handleConfirm = () => {
-    console.log(`Confirmed subscription to ${selectedPlan.name} plan.`);
+    console.log(`Confirmed subscription to ${selectedPlan.planname} plan.`);
     setSelectedPlan(selectedPlan); // Set selectedPlan using the passed setSelectedPlan function
     navigate('/CheckoutPage');
   };
@@ -23,7 +23,7 @@ const SubscriptionConfirmation = ({ setSelectedPlan }) => {
         <div className="plan selected">
           {selectedPlan && (
             <>
-              <h3>{selectedPlan.name}</h3>
+              <h3>{selectedPlan.planname}</h3>
               <p>${selectedPlan.price}/month</p>
               <ul>
                 {selectedPlan.features.map((feature, index) => (

@@ -10,12 +10,8 @@ const port = 3001;
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-// Sample subscription data
-const subscriptions = [
-  { id: 1, customer: 'Customer 1', date: '2024-02-22', amount: 100 },
-  { id: 2, customer: 'Customer 2', date: '2024-02-23', amount: 150 },
-  // Add more subscription objects as needed
-];
+// Initialize an empty array to store subscriptions
+let subscriptions = [];
 
 // Route handler for GET requests to /subscription
 app.get('/subscription', (req, res) => {
@@ -31,10 +27,18 @@ app.get('/subscription', (req, res) => {
 
 // Route handler for POST requests to /subscription
 app.post('/subscription', (req, res) => {
-  // Here you can process the subscription request
-  console.log('Received subscription request:', req.body);
-  // Send back a response indicating successful subscription processing
-  res.status(200).json({ message: 'Subscription processed successfully' });
+  try {
+    // Process the subscription request
+    console.log('Received subscription request:', req.body);
+    // Store the subscription data
+    subscriptions.push(req.body);
+    // Send back a response indicating successful subscription processing
+    res.status(200).json({ message: 'Subscription processed successfully' });
+  } catch (error) {
+    // Handle errors
+    console.error('Error processing subscription:', error);
+    res.status(500).json({ error: 'An error occurred while processing subscription' });
+  }
 });
 
 // Route handler for POST requests to /payment
@@ -51,34 +55,3 @@ app.post('/payment', (req, res) => {
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
-
-
-
-
-
-
-
-
-// // MVC Import required modules
-// const express = require('express');
-// const cors = require('cors');
-// const routes = require('./routes/index');
-
-// // Create an instance of the Express application
-// const app = express();
-
-// // Define the port number
-// const port = 3001;
-
-// // Use middleware
-// app.use(cors({ origin: '*' }));
-// app.use(express.json());
-
-// // Mount routes
-// app.use('/', routes);
-
-// // Start the server
-// app.listen(port, () => {
-//   console.log(`Server listening at http://localhost:${port}`);
-// });
-

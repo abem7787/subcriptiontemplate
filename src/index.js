@@ -24,6 +24,7 @@ import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
 import Dashboard from "./layouts/Dashboard";
+import Upgrade from "./views/Upgrade";
 
 import "./App.css";
 function App() {
@@ -42,9 +43,11 @@ function App() {
         <Route path="/CheckoutPage" element={<CheckoutPage setSelectedPlan={setSelectedPlan} />} />
         <Route path="/ThankYou" element={<ThankYou setSelectedPlan={setSelectedPlan} />} />
         <Route path="/PaymentInfo" element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} />
+        <Route path="dashboard" element={<Dashboard/>} />      
         <Route path="/admin/*" element={<AdminLayout/>}>
           {/* Routes under /admin */}
-          <Route path="dashboard" element={<Dashboard/>} />
+        
+ 
           <Route path="AdminPanel" element={<AdminPanel setSelectedPlan={setSelectedPlan} />} />
         </Route>
       </Routes>

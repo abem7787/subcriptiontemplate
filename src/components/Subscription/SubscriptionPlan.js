@@ -38,9 +38,9 @@ const SubscriptionPlan = () => {
   };
 
   const plans = [
-    { id: 1, name: 'Basic', price: 9.99, features: ['Feature 1', 'Feature 2', 'Feature 3'] },
-    { id: 2, name: 'Standard', price: 19.99, features: ['All Basic features', 'Feature 4', 'Feature 5'] },
-    { id: 3, name: 'Premium', price: 29.99, features: ['All Standard features', 'Feature 6', 'Feature 7'] }
+    { id: 1, planname: 'Basic', price: 9.99, features: ['Feature 1', 'Feature 2', 'Feature 3'] },
+    { id: 2, planname: 'Standard', price: 19.99, features: ['All Basic features', 'Feature 4', 'Feature 5'] },
+    { id: 3, planname: 'Premium', price: 29.99, features: ['All Standard features', 'Feature 6', 'Feature 7'] }
   ];
 
   return (
@@ -49,7 +49,7 @@ const SubscriptionPlan = () => {
       <div className="plans-container">
         {plans.map(plan => (
           <div key={plan.id} className={`plan ${selectedPlan === plan ? 'selected' : ''}`} onClick={() => handleSelectPlan(plan)}>
-            <h3>{plan.name}</h3>
+            <h3>{plan.planname}</h3>
             <p>${plan.price}/month</p>
             <ul>
               {plan.features.map((feature, index) => (
