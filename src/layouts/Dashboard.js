@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ChartistGraph from "react-chartist";
-
+import moment from 'moment';
 
 // react-bootstrap components
 import {
@@ -24,9 +24,12 @@ import {
 function Dashboard() {
 
   const [subscriptions, setSubscriptions] = useState([]);
+  const [lastUpdated, setLastUpdated] = useState(null); // Define lastUpdated here
+  const [register, setRegister] = useState([]);
 
   useEffect(() => {
     fetchSubscriptions();
+    fetchRegister();
   }, []);
 
   const fetchSubscriptions = async () => {
@@ -34,16 +37,49 @@ function Dashboard() {
       const response = await fetch("http://localhost:3001/subscription");
       const data = await response.json();
       setSubscriptions(data);
+      setLastUpdated(new Date());
     } catch (error) {
       console.error("Error fetching subscription data:", error);
     }
   };
 
+
+
+  const fetchRegister = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/register");
+      const data = await response.json();
+      setRegister(data)
+    } catch (error) {
+      console.error("Error fetching subscription data:", error);
+    }
+  };
+
+  const combinedSubscriptions = subscriptions.map((subscription, index) => {
+    if (subscription.name === subscription.name && subscription.selectedPlan) {
+      return {
+        ...subscription,
+        ...subscription.selectedPlan
+      };
+    } else {
+      return subscription;
+    }
+  });
+
+
+
+  const totalRevenue = combinedSubscriptions.reduce((total, subscription) => {
+    return total + (subscription.selectedPlan ? subscription.selectedPlan.price : 0);
+  }, 0);
+
+
+
+
+  console.log(combinedSubscriptions)
   return (
     <>
 
       <Container fluid>
-
         <Row>
           <Col lg="3" sm="6">
             <Card className="card-stats">
@@ -83,7 +119,7 @@ function Dashboard() {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Revenue</p>
-                      <Card.Title as="h4">$ 1,345</Card.Title>
+                      <Card.Title as="h4">$ {totalRevenue.toFixed(2)}</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -92,7 +128,7 @@ function Dashboard() {
                 <hr></hr>
                 <div className="stats">
                   <i className="far fa-calendar-alt mr-1"></i>
-                  Last day
+                  Last updated: {lastUpdated ? lastUpdated.toLocaleString() : "N/A"}
                 </div>
               </Card.Footer>
             </Card>
@@ -108,8 +144,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Errors</p>
-                      <Card.Title as="h4">23</Card.Title>
+                      <p className="card-category">Cancel Orders</p>
+                      <Card.Title as="h4">2</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -134,8 +170,8 @@ function Dashboard() {
                   </Col>
                   <Col xs="7">
                     <div className="numbers">
-                      <p className="card-category">Followers</p>
-                      <Card.Title as="h4">+45K</Card.Title>
+                      <p className="card-category">Customers</p>
+                      <Card.Title as="h4">+{subscriptions.length}</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -262,55 +298,19 @@ function Dashboard() {
           <Col md="6">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">2017 Sales</Card.Title>
-                <p className="card-category">All products including Taxes</p>
+                <Card.Title as="h4">Subscription Plans</Card.Title>
+                <p className="card-category">Revenue by Plan</p>
               </Card.Header>
               <Card.Body>
                 <div className="ct-chart" id="chartActivity">
                   <ChartistGraph
                     data={{
-                      labels: [
-                        "Jan",
-                        "Feb",
-                        "Mar",
-                        "Apr",
-                        "Mai",
-                        "Jun",
-                        "Jul",
-                        "Aug",
-                        "Sep",
-                        "Oct",
-                        "Nov",
-                        "Dec",
-                      ],
+                      labels: ["Basic", "Standard", "Premium"],
                       series: [
                         [
-                          542,
-                          443,
-                          320,
-                          780,
-                          553,
-                          453,
-                          326,
-                          434,
-                          568,
-                          610,
-                          756,
-                          895,
-                        ],
-                        [
-                          412,
-                          243,
-                          280,
-                          580,
-                          453,
-                          353,
-                          300,
-                          364,
-                          368,
-                          410,
-                          636,
-                          695,
+                          combinedSubscriptions.filter(subscription => subscription.selectedPlan && subscription.selectedPlan.planname === "Basic").length,
+                          combinedSubscriptions.filter(subscription => subscription.selectedPlan && subscription.selectedPlan.planname === "Standard").length,
+                          combinedSubscriptions.filter(subscription => subscription.selectedPlan && subscription.selectedPlan.planname === "Premium").length,
                         ],
                       ],
                     }}
@@ -322,27 +322,14 @@ function Dashboard() {
                       },
                       height: "245px",
                     }}
-                    responsiveOptions={[
-                      [
-                        "screen and (max-width: 640px)",
-                        {
-                          seriesBarDistance: 5,
-                          axisX: {
-                            labelInterpolationFnc: function (value) {
-                              return value[0];
-                            },
-                          },
-                        },
-                      ],
-                    ]}
                   />
                 </div>
               </Card.Body>
               <Card.Footer>
                 <div className="legend">
-                  <i className="fas fa-circle text-info"></i>
-                  Tesla Model S <i className="fas fa-circle text-danger"></i>
-                  BMW 5 Series
+                  <i className="fas fa-circle text-info"></i> Premium {" "}
+                  <i className="fas fa-circle text-danger"></i> Standard{" "}
+                  <i className="fas fa-circle text-warning"></i> Basic
                 </div>
                 <hr></hr>
                 <div className="stats">
@@ -367,28 +354,29 @@ function Dashboard() {
                         <th className="name">Name</th>
                         <th className="email">Email</th>
                         <th className="amount">Amount</th>
-                        <th className="amount">Plan</th>
+                        <th className="plan">Plan</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {Array.isArray(subscriptions) && subscriptions.length > 0 ? (
-                        subscriptions.map((subscription, index) => (
+                      {Array.isArray(combinedSubscriptions) && combinedSubscriptions.length > 0 ? (
+                        combinedSubscriptions.map((subscription, index) => (
                           <tr key={index}>
                             <td>
                               <input type="checkbox" defaultChecked={subscription.defaultChecked} />
                             </td>
                             <td>{subscription.name}</td>
                             <td>{subscription.email}</td>
-                            <td>{subscription.selectedPlan?.price}</td>
-                            <td>{subscription.selectedPlan?.planname}</td>
+                            <td>{subscription.selectedPlan ? subscription.selectedPlan.price : ''}</td>
+                            <td>{subscription.selectedPlan ? subscription.selectedPlan.planname : ''}</td>
                           </tr>
                         ))
                       ) : (
                         <tr>
-                          <td colSpan="4">No subscriptions available</td>
+                          <td colSpan="5">No subscriptions available</td>
                         </tr>
                       )}
                     </tbody>
+
                   </table>
                 </div>
               </Card.Body>
@@ -403,6 +391,7 @@ function Dashboard() {
           </Col>
         </Row>
       </Container>
+
     </>
   );
 }

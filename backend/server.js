@@ -10,8 +10,11 @@ const port = 3001;
 app.use(cors({ origin: '*' }));
 app.use(express.json());
 
-// Initialize an empty array to store subscriptions
 let subscriptions = [];
+
+app.get('/', (req, res) => {
+  res.send('Hello World!'); // Or any other response you want to send for the root URL
+});
 
 // Route handler for GET requests to /subscription
 app.get('/subscription', (req, res) => {
@@ -51,7 +54,66 @@ app.post('/payment', (req, res) => {
   res.status(200).json({ message: 'Payment processed successfully' });
 });
 
+
+app.post('/register', (req, res) => {
+  try {
+    // Return the subscription data
+    res.status(200).json(subscriptions);
+  } catch (error) {
+    // Handle errors
+    console.error('Error retrieving subscription data:', error);
+    res.status(500).json({ error: 'An error occurred while retrieving subscription data' });
+  }
+});
+
+
+
+
+app.get('/register', (req, res) => {
+  try {
+    // Return the subscription data
+    res.status(200).json(subscriptions);
+  } catch (error) {
+    // Handle errors
+    console.error('register retrieving  data:', error);
+    res.status(500).json({ error: 'An error occurred while retrieving register data' });
+  }
+});
+
 // Start the server
+
+
 app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
+
+
+
+
+
+
+
+
+// // MVC Import required modules
+// const express = require('express');
+// const cors = require('cors');
+// const routes = require('./routes/index');
+
+// // Create an instance of the Express application
+// const app = express();
+
+// // Define the port number
+// const port = 3001;
+
+// // Use middleware
+// app.use(cors({ origin: '*' }));
+// app.use(express.json());
+
+// // Mount routes
+// app.use('/', routes);
+
+// // Start the server
+// app.listen(port, () => {
+//   console.log(`Server listening at http://localhost:${port}`);
+// });
+

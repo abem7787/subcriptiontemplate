@@ -40,7 +40,7 @@ const Register = () => {
       if (formData.name && formData.email && formData.password) {
         const privacyPolicyChecked = document.getElementById('customCheckRegister').checked;
         if (privacyPolicyChecked) {
-          const response = await fetch('http://localhost:3001/subscription', {
+          const response = await fetch('http://localhost:3001/rister', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
