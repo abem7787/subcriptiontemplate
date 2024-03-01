@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ChartistGraph from "react-chartist";
 import moment from 'moment';
-
+import { Pie } from 'react-chartjs-2';
 
 // react-bootstrap components
 import {

@@ -343,3 +343,32 @@ footer {
   text-align: center;
   margin-top: 40
 }
+
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+
+.pie {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.pie:nth-child(1) {
+  background-color: #f39c12; /* Basic */
+  transform: rotate(var(--value1));
+}
+
+.pie:nth-child(2) {
+  background-color: #e74c3c; /* Standard */
+  transform: rotate(var(--value2));
+}
+
+.pie:nth-child(3) {
+  background-color: #3498db; /* Premium */
+  transform: rotate(var(--value3));
+}
