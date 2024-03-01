@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import ChartistGraph from "react-chartist";
 import moment from 'moment';
 
+
 // react-bootstrap components
 import {
   Badge,
@@ -24,13 +25,17 @@ import {
 function Dashboard() {
 
   const [subscriptions, setSubscriptions] = useState([]);
-  const [lastUpdated, setLastUpdated] = useState(null); // Define lastUpdated here
+  const [lastUpdated, setLastUpdated] = useState(null);
   const [register, setRegister] = useState([]);
-
+  const [subscriptionStats, setSubscriptionStats] = useState(null);
   useEffect(() => {
     fetchSubscriptions();
     fetchRegister();
   }, []);
+
+  useEffect(() => {
+    calculateSubscriptionStats(subscriptions);
+  }, [subscriptions]);
 
   const fetchSubscriptions = async () => {
     try {
@@ -66,15 +71,58 @@ function Dashboard() {
     }
   });
 
+  // Handle cancel button click
+  // Handle cancel button click
 
+  const handleCancel = async (subscriptionId) => {
+    try {
+      const response = await fetch(`http://localhost:3001/subscription/${subscriptionId}`, {
+        method: 'DELETE',
+      });
+      if (response.ok) {
+        setSubscriptions(prevSubscriptions => prevSubscriptions.filter(sub => sub.id !== subscriptionId));
 
-  const totalRevenue = combinedSubscriptions.reduce((total, subscription) => {
+        // Increment the cancel orders count in the register state
+        const updatedRegister = register.map(item => {
+          if (item.id === subscriptionId) {
+            return { ...item, cancelOrders: (item.cancelOrders || 0) + 1 };
+          }
+          return item;
+        });
+        setRegister(updatedRegister);
+
+        setLastUpdated(new Date()); // Update last updated time
+      } else {
+        console.error('Failed to delete subscription');
+      }
+    } catch (error) {
+      console.error('Error deleting subscription:', error);
+    }
+  };
+
+  const totalRevenue = subscriptions.reduce((total, subscription) => {
     return total + (subscription.selectedPlan ? subscription.selectedPlan.price : 0);
   }, 0);
 
 
+  const totalCancelOrders = register.reduce((total, item) => {
+    return total + (item.cancelOrders || 0);
+  }, 0);
 
 
+
+  const calculateSubscriptionStats = (data) => {
+    const basicCount = data.filter(sub => sub.selectedPlan && sub.selectedPlan.planname === "Basic").length;
+    const standardCount = data.filter(sub => sub.selectedPlan && sub.selectedPlan.planname === "Standard").length;
+    const premiumCount = data.filter(sub => sub.selectedPlan && sub.selectedPlan.planname === "Premium").length;
+
+    const totalSubscriptions = data.length;
+    setSubscriptionStats({
+      basic: (basicCount / totalSubscriptions) * 100,
+      standard: (standardCount / totalSubscriptions) * 100,
+      premium: (premiumCount / totalSubscriptions) * 100,
+    });
+  };
   console.log(combinedSubscriptions)
   return (
     <>
@@ -145,7 +193,7 @@ function Dashboard() {
                   <Col xs="7">
                     <div className="numbers">
                       <p className="card-category">Cancel Orders</p>
-                      <Card.Title as="h4">2</Card.Title>
+                      <Card.Title as="h4">{totalCancelOrders}</Card.Title>
                     </div>
                   </Col>
                 </Row>
@@ -263,28 +311,17 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Email Statistics</Card.Title>
+                <Card.Title as="h4">Subscription Statistics</Card.Title>
                 <p className="card-category">Last Campaign Performance</p>
               </Card.Header>
               <Card.Body>
-                <div
-                  className="ct-chart ct-perfect-fourth"
-                  id="chartPreferences"
-                >
-                  <ChartistGraph
-                    data={{
-                      labels: ["40%", "20%", "40%"],
-                      series: [40, 20, 40],
-                    }}
-                    type="Pie"
-                  />
-                </div>
-                <div className="legend">
-                  <i className="fas fa-circle text-info"></i>
-                  Open <i className="fas fa-circle text-danger"></i>
-                  Bounce <i className="fas fa-circle text-warning"></i>
-                  Unsubscribe
-                </div>
+                {subscriptionStats && (
+                  <div className="legend">
+                    <p className="text-warning">Basic: {subscriptionStats.basic.toFixed(2)}%</p>
+                    <p className="text-danger">Standard: {subscriptionStats.standard.toFixed(2)}%</p>
+                    <p className="text-info">Premium: {subscriptionStats.premium.toFixed(2)}%</p>
+                  </div>
+                )}
                 <hr></hr>
                 <div className="stats">
                   <i className="far fa-clock"></i>
@@ -316,20 +353,57 @@ function Dashboard() {
                     }}
                     type="Bar"
                     options={{
-                      seriesBarDistance: 10,
                       axisX: {
                         showGrid: false,
                       },
+                      axisY: {
+                        onlyInteger: true, // Ensure Y-axis values are integers
+                      },
                       height: "245px",
+                      classNames: {
+                        bar: 'ct-bar', // Add a class to bars for styling
+                      },
+                      // Define colors for each series
+                      seriesBarDistance: 10,
+                      low: 0,
+                      high: 10,
+                    }}
+                    listener={{
+                      created: function (data) {
+                        // Add custom classes to each series
+                        data.svg.elem('rect', {
+                          x: data.options.axisX.offset + data.x1 + 5,
+                          y: data.y1 + 5,
+                          width: 30,
+                          height: 30,
+                          fill: '#ff0000', // Set color for Basic
+                        }, data.options.classNames.bar);
+
+                        data.svg.elem('rect', {
+                          x: data.options.axisX.offset + data.x2 + 5,
+                          y: data.y2 + 5,
+                          width: 30,
+                          height: 30,
+                          fill: '#0000ff', // Set color for Standard
+                        }, data.options.classNames.bar);
+
+                        data.svg.elem('rect', {
+                          x: data.options.axisX.offset + data.x3 + 5,
+                          y: data.y3 + 5,
+                          width: 30,
+                          height: 30,
+                          fill: '#ffff00', // Set color for Premium
+                        }, data.options.classNames.bar);
+                      }
                     }}
                   />
                 </div>
               </Card.Body>
               <Card.Footer>
                 <div className="legend">
-                  <i className="fas fa-circle text-info"></i> Premium {" "}
+                  <i className="fas fa-circle text-warning"></i> Basic {" "}
                   <i className="fas fa-circle text-danger"></i> Standard{" "}
-                  <i className="fas fa-circle text-warning"></i> Basic
+                  <i className="fas fa-circle text-info"></i> Premium
                 </div>
                 <hr></hr>
                 <div className="stats">
@@ -338,6 +412,8 @@ function Dashboard() {
                 </div>
               </Card.Footer>
             </Card>
+
+
           </Col>
           <Col md="6">
             <Card className="card-tasks">
@@ -350,7 +426,7 @@ function Dashboard() {
                   <table className="table">
                     <thead className="thead">
                       <tr>
-                        <th>Select</th>
+                        <th>Cancel</th> {/* Change "Select" to "Cancel" */}
                         <th className="name">Name</th>
                         <th className="email">Email</th>
                         <th className="amount">Amount</th>
@@ -358,11 +434,18 @@ function Dashboard() {
                       </tr>
                     </thead>
                     <tbody>
-                      {Array.isArray(combinedSubscriptions) && combinedSubscriptions.length > 0 ? (
-                        combinedSubscriptions.map((subscription, index) => (
+                      {Array.isArray(subscriptions) && subscriptions.length > 0 ? (
+                        subscriptions.map((subscription, index) => (
                           <tr key={index}>
                             <td>
-                              <input type="checkbox" defaultChecked={subscription.defaultChecked} />
+                              {subscription.selectedPlan && (
+                                <Button
+                                  variant="danger"
+                                  onClick={() => handleCancel(subscription.id)}
+                                >
+                                  Cancel
+                                </Button>
+                              )}
                             </td>
                             <td>{subscription.name}</td>
                             <td>{subscription.email}</td>
@@ -375,8 +458,8 @@ function Dashboard() {
                           <td colSpan="5">No subscriptions available</td>
                         </tr>
                       )}
-                    </tbody>
 
+                    </tbody>
                   </table>
                 </div>
               </Card.Body>
@@ -389,6 +472,7 @@ function Dashboard() {
               </Card.Footer>
             </Card>
           </Col>
+
         </Row>
       </Container>
 

@@ -44,6 +44,19 @@ app.post('/subscription', (req, res) => {
   }
 });
 
+
+app.delete('/subscription/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    // Find the subscription with the given ID and remove it from the subscriptions array
+    subscriptions = subscriptions.filter(subscription => subscription.id !== id);
+    res.status(200).json({ message: 'Subscription deleted successfully' });
+  } catch (error) {
+    console.error('Error deleting subscription:', error);
+    res.status(500).json({ error: 'An error occurred while deleting subscription' });
+  }
+});
+
 // Route handler for POST requests to /payment
 app.post('/payment', (req, res) => {
   // Process the payment request here
