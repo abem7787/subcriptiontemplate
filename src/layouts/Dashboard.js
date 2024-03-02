@@ -37,6 +37,7 @@ function Dashboard() {
     calculateSubscriptionStats(subscriptions);
   }, [subscriptions]);
 
+
   const fetchSubscriptions = async () => {
     try {
       const response = await fetch("http://localhost:3001/subscription");
@@ -124,6 +125,13 @@ function Dashboard() {
     });
   };
   console.log(combinedSubscriptions)
+
+  const monthNames = [
+    "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+  ];
+
+
   return (
     <>
 
@@ -238,23 +246,14 @@ function Dashboard() {
           <Col md="8">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Users Behavior</Card.Title>
+                <Card.Title as="h4">Subscription Behavior</Card.Title>
                 <p className="card-category">24 Hours performance</p>
               </Card.Header>
               <Card.Body>
                 <div className="ct-chart" id="chartHours">
                   <ChartistGraph
                     data={{
-                      labels: [
-                        "9:00AM",
-                        "12:00AM",
-                        "3:00PM",
-                        "6:00PM",
-                        "9:00PM",
-                        "12:00PM",
-                        "3:00AM",
-                        "6:00AM",
-                      ],
+                      labels: monthNames, // Use month names instead of time labels
                       series: [
                         [287, 385, 490, 492, 554, 586, 698, 695],
                         [67, 152, 143, 240, 287, 335, 435, 437],
@@ -295,10 +294,9 @@ function Dashboard() {
               </Card.Body>
               <Card.Footer>
                 <div className="legend">
-                  <i className="fas fa-circle text-info"></i>
-                  Open <i className="fas fa-circle text-danger"></i>
-                  Click <i className="fas fa-circle text-warning"></i>
-                  Click Second Time
+                  <i className="fas fa-circle text-info"></i> Basic{" "}
+                  <i className="fas fa-circle text-danger"></i> Standard{" "}
+                  <i className="fas fa-circle text-warning"></i> Premium
                 </div>
                 <hr></hr>
                 <div className="stats">
