@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import ChartistGraph from "react-chartist";
 import moment from 'moment';
+import { Image } from 'react-bootstrap';
 import { Pie } from 'react-chartjs-2';
 import 'chart.js/auto';
-
-
+import logoImg from 'assets/img/brand/increqimg.png';
 // react-bootstrap components
 import {
   Badge,
@@ -25,6 +26,8 @@ import {
 
 
 function Dashboard() {
+
+  const navigate = useNavigate(); // Use useNavigate instead of useHistory
 
   const [subscriptions, setSubscriptions] = useState([]);
   const [lastUpdated, setLastUpdated] = useState(null);
@@ -74,8 +77,6 @@ function Dashboard() {
     }
   });
 
-  // Handle cancel button click
-  // Handle cancel button click
 
   const handleCancel = async (subscriptionId) => {
     try {
@@ -83,16 +84,21 @@ function Dashboard() {
         method: 'DELETE',
       });
       if (response.ok) {
+        // Remove the canceled subscription from the list
         setSubscriptions(prevSubscriptions => prevSubscriptions.filter(sub => sub.id !== subscriptionId));
 
-        // Increment the cancel orders count in the register state
-        const updatedRegister = register.map(item => {
-          if (item.id === subscriptionId) {
-            return { ...item, cancelOrders: (item.cancelOrders || 0) + 1 };
+        // Increment the cancel orders count for the canceled subscription in the register state
+        setRegister(prevRegister => {
+          const updatedRegister = [...prevRegister];
+          const subscriptionIndex = updatedRegister.findIndex(item => item.id === subscriptionId);
+          if (subscriptionIndex !== -1) {
+            updatedRegister[subscriptionIndex] = {
+              ...updatedRegister[subscriptionIndex],
+              cancelOrders: (updatedRegister[subscriptionIndex].cancelOrders || 0) + 1
+            };
           }
-          return item;
+          return updatedRegister;
         });
-        setRegister(updatedRegister);
 
         setLastUpdated(new Date()); // Update last updated time
       } else {
@@ -102,6 +108,8 @@ function Dashboard() {
       console.error('Error deleting subscription:', error);
     }
   };
+
+
 
   const totalRevenue = subscriptions.reduce((total, subscription) => {
     return total + (subscription.selectedPlan ? subscription.selectedPlan.price : 0);
@@ -134,9 +142,25 @@ function Dashboard() {
   ];
 
 
+  const handleBillingClick = () => {
+    navigate('/billing-setup');
+  };
 
   return (
     <>
+        <Navbar bg="dark" variant="dark" className="mb-3">
+        <Container>
+          <Navbar.Brand href="#home">
+            <Image src={logoImg} style={{ width: '150px', height: '45px',marginRight: '10px' }} />
+          </Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link onClick={() => navigate('/billing-setup')}>Billing</Nav.Link> {/* Use navigate function */}
+            <Nav.Link href="#pricing">Settings</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+
       <Container fluid>
         <Row>
           <Col lg="3" sm="6">
@@ -317,53 +341,53 @@ function Dashboard() {
               <Card.Body>
                 {subscriptionStats && (
                   <Pie
-                  data={{
-                    labels: [],
-                    datasets: [{
-                      data: [
-                        subscriptionStats.basic,
-                        subscriptionStats.standard,
-                        subscriptionStats.premium
-                      ],
-                      backgroundColor: ['#FFCE56', '#FF6384', '#36A2EB'],
-                      hoverBackgroundColor: ['#FFCE56', '#FF6384', '#36A2EB']
-                    }]
-                  }}
-                  options={{
-                    legend: {
-                      display: false
-                    },
-                    
-                    plugins: {
-                      datalabels: {
-                        formatter: (value, ctx) => {
-                          let sum = ctx.dataset.data.reduce((a, b) => a + b, 0);
-                          let percentage = ((value / sum) * 100).toFixed(2) + "%";
-                          return percentage;
-                        },
-                        color: '#fff',
-                        font: {
-                          weight: 'bold'
-                          
-                        },
+                    data={{
+                      labels: [],
+                      datasets: [{
+                        data: [
+                          subscriptionStats.basic,
+                          subscriptionStats.standard,
+                          subscriptionStats.premium
+                        ],
+                        backgroundColor: ['#FFCE56', '#FF6384', '#36A2EB'],
+                        hoverBackgroundColor: ['#FFCE56', '#FF6384', '#36A2EB']
+                      }]
+                    }}
+                    options={{
+                      legend: {
+                        display: false
                       },
-                      textAlign: 'center',
-                      labels: {
-                        title: {
+
+                      plugins: {
+                        datalabels: {
+                          formatter: (value, ctx) => {
+                            let sum = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                            let percentage = ((value / sum) * 100).toFixed(2) + "%";
+                            return percentage;
+                          },
+                          color: '#fff',
                           font: {
-                            size: '16'
+                            weight: 'bold'
+
+                          },
+                        },
+                        textAlign: 'center',
+                        labels: {
+                          title: {
+                            font: {
+                              size: '16'
+                            }
                           }
                         }
+                      },
+
+                      tooltips: {
+                        enabled: false
+                      },
+                      hover: {
+                        mode: null
                       }
-                    },
-                    
-                    tooltips: {
-                      enabled: false
-                    },
-                    hover: {
-                      mode: null
-                    }
-                  }}
+                    }}
                   />
                 )}
               </Card.Body>
