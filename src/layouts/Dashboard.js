@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ChartistGraph from "react-chartist";
 import moment from 'moment';
 import { Pie } from 'react-chartjs-2';
+import 'chart.js/auto';
+
 
 // react-bootstrap components
 import {
@@ -132,9 +134,9 @@ function Dashboard() {
   ];
 
 
+
   return (
     <>
-
       <Container fluid>
         <Row>
           <Col lg="3" sm="6">
@@ -294,9 +296,9 @@ function Dashboard() {
               </Card.Body>
               <Card.Footer>
                 <div className="legend">
-                  <i className="fas fa-circle text-info"></i> Basic{" "}
+                  <i className="fas fa-circle text-warning"></i> Basic{" "}
                   <i className="fas fa-circle text-danger"></i> Standard{" "}
-                  <i className="fas fa-circle text-warning"></i> Premium
+                  <i className="fas fa-circle text-info"></i> Premium
                 </div>
                 <hr></hr>
                 <div className="stats">
@@ -309,23 +311,74 @@ function Dashboard() {
           <Col md="4">
             <Card>
               <Card.Header>
-                <Card.Title as="h4">Subscription Statistics</Card.Title>
-                <p className="card-category">Last Campaign Performance</p>
+                <Card.Title as="h4">Subscription Distribution</Card.Title>
+                <p className="card-category">Percentage of Subscriptions</p>
               </Card.Header>
               <Card.Body>
                 {subscriptionStats && (
-                  <div className="legend">
-                    <p className="text-warning">Basic: {subscriptionStats.basic.toFixed(2)}%</p>
-                    <p className="text-danger">Standard: {subscriptionStats.standard.toFixed(2)}%</p>
-                    <p className="text-info">Premium: {subscriptionStats.premium.toFixed(2)}%</p>
-                  </div>
+                  <Pie
+                  data={{
+                    labels: [],
+                    datasets: [{
+                      data: [
+                        subscriptionStats.basic,
+                        subscriptionStats.standard,
+                        subscriptionStats.premium
+                      ],
+                      backgroundColor: ['#FFCE56', '#FF6384', '#36A2EB'],
+                      hoverBackgroundColor: ['#FFCE56', '#FF6384', '#36A2EB']
+                    }]
+                  }}
+                  options={{
+                    legend: {
+                      display: false
+                    },
+                    
+                    plugins: {
+                      datalabels: {
+                        formatter: (value, ctx) => {
+                          let sum = ctx.dataset.data.reduce((a, b) => a + b, 0);
+                          let percentage = ((value / sum) * 100).toFixed(2) + "%";
+                          return percentage;
+                        },
+                        color: '#fff',
+                        font: {
+                          weight: 'bold'
+                          
+                        },
+                      },
+                      textAlign: 'center',
+                      labels: {
+                        title: {
+                          font: {
+                            size: '16'
+                          }
+                        }
+                      }
+                    },
+                    
+                    tooltips: {
+                      enabled: false
+                    },
+                    hover: {
+                      mode: null
+                    }
+                  }}
+                  />
                 )}
+              </Card.Body>
+              <Card.Footer>
+                <div className="legend">
+                  <i className="fas fa-circle text-warning"></i> Basic {" "}
+                  <i className="fas fa-circle text-danger"></i> Standard{" "}
+                  <i className="fas fa-circle text-info"></i> Premium
+                </div>
                 <hr></hr>
                 <div className="stats">
-                  <i className="far fa-clock"></i>
-                  Campaign sent 2 days ago
+                  <i className="fas fa-history"></i>
+                  Updated 3 minutes ago
                 </div>
-              </Card.Body>
+              </Card.Footer>
             </Card>
           </Col>
         </Row>
