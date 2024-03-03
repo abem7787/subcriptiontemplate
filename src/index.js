@@ -9,6 +9,7 @@ import Login from "views/examples/Login.js";
 import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import AdminPanel from "./components/Admin/AdminPanel"
+import SubscriptionEdits from "components/Subscription/SubscriptionEdits";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
@@ -46,6 +47,7 @@ function App() {
         <Route path="/PaymentInfo" element={<PaymentInfo setSelectedPlan={setSelectedPlan} />} />
         <Route path="dashboard" element={<Dashboard/>} />      
         <Route path="/billing-setup" element={<BillingSetup/>} /> 
+        <Route path="/subscription-edits" element={<SubscriptionEdits />} /> 
         <Route path="/admin/*" element={<AdminLayout/>}>
           {/* Routes under /admin */}
         

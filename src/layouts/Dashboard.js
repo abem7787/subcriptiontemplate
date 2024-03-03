@@ -84,9 +84,8 @@ function Dashboard() {
         method: 'DELETE',
       });
       if (response.ok) {
-        // Remove the canceled subscription from the list
-        setSubscriptions(prevSubscriptions => prevSubscriptions.filter(sub => sub.id !== subscriptionId));
-
+        // Clear all items from the subscriptions list
+        setSubscriptions([]);
         // Increment the cancel orders count for the canceled subscription in the register state
         setRegister(prevRegister => {
           const updatedRegister = [...prevRegister];
@@ -99,7 +98,6 @@ function Dashboard() {
           }
           return updatedRegister;
         });
-
         setLastUpdated(new Date()); // Update last updated time
       } else {
         console.error('Failed to delete subscription');
@@ -108,6 +106,7 @@ function Dashboard() {
       console.error('Error deleting subscription:', error);
     }
   };
+  
 
 
 
@@ -148,10 +147,10 @@ function Dashboard() {
 
   return (
     <>
-        <Navbar bg="dark" variant="dark" className="mb-3">
+      <Navbar bg="dark" variant="dark" className="mb-3">
         <Container>
           <Navbar.Brand href="#home">
-            <Image src={logoImg} style={{ width: '150px', height: '45px',marginRight: '10px' }} />
+            <Image src={logoImg} style={{ width: '150px', height: '45px', marginRight: '10px' }} />
           </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
@@ -281,9 +280,7 @@ function Dashboard() {
                     data={{
                       labels: monthNames, // Use month names instead of time labels
                       series: [
-                        [287, 385, 490, 492, 554, 586, 698, 695],
-                        [67, 152, 143, 240, 287, 335, 435, 437],
-                        [23, 113, 67, 108, 190, 239, 307, 308],
+                        subscriptions.map(sub => sub.usage || 0),
                       ],
                     }}
                     type="Line"
@@ -320,18 +317,19 @@ function Dashboard() {
               </Card.Body>
               <Card.Footer>
                 <div className="legend">
-                  <i className="fas fa-circle text-warning"></i> Basic{" "}
-                  <i className="fas fa-circle text-danger"></i> Standard{" "}
+                  <i className="fas fa-circle text-warning"></i> Basic
+                  <i className="fas fa-circle text-danger"></i> Standard
                   <i className="fas fa-circle text-info"></i> Premium
                 </div>
                 <hr></hr>
                 <div className="stats">
                   <i className="fas fa-history"></i>
-                  Updated 3 minutes ago
+                  Updated {lastUpdated ? moment(lastUpdated).fromNow() : "N/A"}
                 </div>
               </Card.Footer>
             </Card>
           </Col>
+
           <Col md="4">
             <Card>
               <Card.Header>
@@ -509,30 +507,25 @@ function Dashboard() {
                       </tr>
                     </thead>
                     <tbody>
-                      {Array.isArray(subscriptions) && subscriptions.length > 0 ? (
-                        subscriptions.map((subscription, index) => (
-                          <tr key={index}>
-                            <td>
-                              {subscription.selectedPlan && (
-                                <Button
-                                  variant="danger"
-                                  onClick={() => handleCancel(subscription.id)}
-                                >
-                                  Cancel
-                                </Button>
-                              )}
-                            </td>
-                            <td>{subscription.name}</td>
-                            <td>{subscription.email}</td>
-                            <td>{subscription.selectedPlan ? subscription.selectedPlan.price : ''}</td>
-                            <td>{subscription.selectedPlan ? subscription.selectedPlan.planname : ''}</td>
-                          </tr>
-                        ))
-                      ) : (
-                        <tr>
-                          <td colSpan="5">No subscriptions available</td>
+                   
+                      {subscriptions.map((subscription, index) => (
+                        <tr key={index}>
+                          <td>
+                            {subscription.selectedPlan && (
+                              <Button
+                                variant="danger"
+                                onClick={() => handleCancel(subscription.id)} // Pass subscription id to handleCancel
+                              >
+                                Cancel
+                              </Button>
+                            )}
+                          </td>
+                          <td>{subscription.name}</td>
+                          <td>{subscription.email}</td>
+                          <td>{subscription.selectedPlan ? subscription.selectedPlan.price : ''}</td>
+                          <td>{subscription.selectedPlan ? subscription.selectedPlan.planname : ''}</td>
                         </tr>
-                      )}
+                      ))}
 
                     </tbody>
                   </table>
