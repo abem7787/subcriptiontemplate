@@ -1,6 +1,6 @@
 import React from "react";
 
-// react-bootstrap components
+
 import {
   Badge,
   Button,

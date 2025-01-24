@@ -25,7 +25,7 @@ import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
 import Dashboard from "./layouts/Dashboard";
-import Upgrade from "./views/Upgrade";
+
 import BillingSetup from './layouts/BillingSetupPage';
 
 import "./App.css";
@@ -49,7 +49,7 @@ function App() {
         <Route path="/billing-setup" element={<BillingSetup/>} /> 
         <Route path="/subscription-edits" element={<SubscriptionEdits />} /> 
         <Route path="/admin/*" element={<AdminLayout/>}>
-          {/* Routes under /admin */}
+  
         
  
           <Route path="AdminPanel" element={<AdminPanel setSelectedPlan={setSelectedPlan} />} />
