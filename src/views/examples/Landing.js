@@ -63,15 +63,14 @@ class Landing extends React.Component {
                     <Container className="container-lg">
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
-                          <h1 className="display-3 text-white">
-                          INCREQ Workflow Design System
-                            <span>completed with examples</span>
-                          </h1>
+                          <h7 className="display-3 text-white" style={{ fontSize: '2.00rem' }}>
+                          Right Angle Tech: Streamline Your Web, Mobile, and Software Development with Scalable Design Systems and Generative AI.
+                          {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
+                          </h7>
 
                           <p className="lead text-white">
-                            The design system comes with four pre-built pages to
-                            help you get started faster. You can change the text and
-                            images and you're good to go.
+                          Accelerate Your Development while focusing on the efficiency boost that generative AI can bring to the development process.
+                          Our design system includes four fully customizable, pre-built pages, designed to accelerate your development process. Easily adapt the content and visuals to fit your unique needs, and you'll be up and running in no time.
                           </p>
                           <div className="btn-wrapper">
                             {/* <Button
@@ -83,20 +82,14 @@ class Landing extends React.Component {
                           <span className="btn-inner--text">Join Now</span>
                         </Button> */}
 
-                            <Button
-                              className="btn-icon mb-3 mb-sm-0"
-                              color="info"
-                              to="/register-page" tag={Link}
-                              target="_blank"
-                            >
-                              <span className="btn-inner--icon">
-                                <i className="fa fa-cloud-download mr-2" />
-                              </span>
-                              <span className="nav-link-inner--text ml-1" >
-                                Join Now
-                              </span>
-                            </Button>
-                            <Button
+                   <Button
+                    className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                   color="default"
+                    href="tel:+13478155674">
+                      <span className="btn-inner--text ml-1">
+                        Call Now</span></Button>
+
+                            {/* <Button
                               className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
                               color="default"
                               to="/register-page" tag={Link}
@@ -105,12 +98,12 @@ class Landing extends React.Component {
                               <span className="btn-inner--text">
                                 Learn More
                               </span>
-                            </Button>
+                            </Button> */}
                           </div>
                         </Col>
                         <Col className="mb-5 mb-lg-0" md="6">
                           <Card className="card-lift--hover shadow border-0">
-                            <Link to="/profile-page">
+                            <Link to="/">
                               <CardImg class="h-10"
                                 alt="..."
                                 src={require("assets/img/brand/increqmain.png")}
@@ -147,118 +140,7 @@ class Landing extends React.Component {
             </section>
 
           </div>
-          <section className="section section-lg pt-lg-0 mt--200">
-            <Container>
-              <Row className="justify-content-center">
-                <Col lg="12">
-                  <Row className="row-grid">
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-primary rounded-circle mb-4">
-                            <i className="ni ni-check-bold" />
-                          </div>
-                          <h6 className="text-primary text-uppercase">
-                          Centralized Task Management
-                          </h6>
-                          <p className="description mt-3">
-                          Centralized Task Management: Work management software provides a centralized platform where teams can create, assign, and track tasks and projects. 
-                          </p>
-                          <div>
-                            <Badge color="primary" pill className="mr-1">
-                              design
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              system
-                            </Badge>
-                            <Badge color="primary" pill className="mr-1">
-                              creative
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="primary"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-success rounded-circle mb-4">
-                            <i className="ni ni-istanbul" />
-                          </div>
-                          <h6 className="text-success text-uppercase">
-                          Collaboration and Communication: 
-                          </h6>
-                          <p className="description mt-3">
-                          Effective communication and collaboration are essential for project success. Work management software facilitates collaboration by providing features such as file sharing, commenting, and real-time messaging.
-                          </p>
-                          <div>
-                            <Badge color="success" pill className="mr-1">
-                              business
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              vision
-                            </Badge>
-                            <Badge color="success" pill className="mr-1">
-                              success
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="success"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                    <Col lg="4">
-                      <Card className="card-lift--hover shadow border-0">
-                        <CardBody className="py-5">
-                          <div className="icon icon-shape icon-shape-warning rounded-circle mb-4">
-                            <i className="ni ni-planet" />
-                          </div>
-                          <h6 className="text-warning text-uppercase">
-                          Performance Tracking and Reporting: 
-                          </h6>
-                          <p className="description mt-3">
-                          Work management software offers robust reporting and analytics capabilities that enable organizations to track performance, identify bottlenecks, and make data-driven decisions
-                          </p>
-                          <div>
-                            <Badge color="warning" pill className="mr-1">
-                              marketing
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              product
-                            </Badge>
-                            <Badge color="warning" pill className="mr-1">
-                              launch
-                            </Badge>
-                          </div>
-                          <Button
-                            className="mt-4"
-                            color="warning"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </Button>
-                        </CardBody>
-                      </Card>
-                    </Col>
-                  </Row>
-                </Col>
-              </Row>
-            </Container>
-          </section>
+       
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
@@ -342,7 +224,7 @@ class Landing extends React.Component {
                   <Card className="bg-default shadow border-0">
                     <CardImg
                       alt="..."
-                      src={require("assets/img/theme/img-1-1200x1000.jpg")}
+                      src={require("assets/img/brand/harvardcs50.jpg")}
                       top
                     />
                     <blockquote className="card-blockquote">
@@ -363,36 +245,53 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                        Design System
+                      CS50 Harvard University
                       </h4>
                       <p className="lead text-italic text-white">
-                      The design system begins with a set of core principles that guide all design decisions. These principles reflect the brand values, user needs, and business objectives, providing a framework for creating cohesive and meaningful experiences.
+                      CS50 from Harvard University, which has provided me with a solid foundation in computer science. Equipped with essential skills in programming, algorithms, data structures, and problem-solving, which form the backbone of hands-on experience in artificial intelligence (AI) and software development, where I have applied these foundational skills to build intelligent systems to develop mobile applications, and complex real-world challenges
                       </p>
                     </blockquote>
                   </Card>
                 </Col>
+                
                 <Col md="6">
                   <div className="pl-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
-                      <i className="ni ni-settings" />
-                    </div>
-                    <h3>Our customers</h3>
+                  <img
+                      alt="..."
+                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
+                      src={require("assets/img/brand/abe7878.jpg")}
+                      style={{ width: "200px" }}
+                    />
+                      <div className="text-center">
+  <h5 className="text-center mt-5">
+    <span className="d-block mb-1">Abraham Mirambeaux</span>
+    <small className="h6 text-left">
+      Software Engineer
+    </small>
+  </h5>
+</div>
+
+                    <h3>About Me</h3>
                     <p className="lead">
-                    Diverse Industries and Sectors: Our work management software caters to a wide range of industries and sectors, including technology, finance, healthcare, manufacturing, education, and more. From small startups to large enterprises, our software is designed to meet the needs of organizations of all sizes and complexities. 
-                    </p>
-                    <p>
-                    Whether it's a software development team managing agile projects or a marketing department overseeing campaign launches, our software provides the tools and features needed to streamline workflows and boost productivity.
-                    </p>
-                    <p>
-                    We prioritize customer feedback and insights, continuously iterating and improving our software based on user needs and preferences. Through personalized support, comprehensive training resources, and proactive communication, we ensure that our customers receive the guidance and assistance they need to maximize the benefits of our software
-                    </p>
-                    <a
-                      className="font-weight-bold text-warning mt-5"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      A beautiful UI Kit for impactful websites
-                    </a>
+                    As a Software Engineer and a graduate of CS50 from Harvard University, I have gained a strong foundation in computer science that enables me to build efficient, scalable, and secure software solutions. 
+    </p>
+    <p>
+    Through hands-on experience with programming languages like Python, C, and SQL, as well as mastery in algorithms, data structures, and problem-solving techniques, I focus on creating high-performance applications. My expertise allows me to develop software solutions that solve complex real-world challenges and drive impactful results.
+    </p>
+    <p>
+    I have also worked with cutting-edge technologies in artificial intelligence (AI), integrating smart systems and automation into various products. This experience has further honed my skills in designing systems that not only perform well but also scale seamlessly.
+
+    </p>
+  
+<p className="lead">
+  Our work management software serves diverse industries, from technology and finance to healthcare, manufacturing, and education. Whether it's small startups or large enterprises, our tools are tailored to meet the unique needs of businesses of all sizes and complexities.
+</p>
+
+<p>
+   Providin solutions that streamline workflows, boost productivity, and manage everything from agile software development to marketing campaign launches.
+</p>
+
+
                   </div>
                 </Col>
               </Row>
@@ -401,84 +300,53 @@ class Landing extends React.Component {
           <section className="section pb-0 bg-gradient-warning">
             <Container>
               <Row className="row-grid align-items-center">
-                <Col className="order-lg-2 ml-lg-auto" md="6">
-                  <div className="position-relative pl-md-5">
-                    <img
-                      alt="..."
-                      className="img-center img-fluid"
-                      src={require("assets/img/theme/promo-1.png")}
-                    />
-                  </div>
-                </Col>
-                <Col className="order-lg-1" lg="6">
-                  <div className="d-flex px-3">
-                    <div>
-                      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                        <i className="ni ni-building text-primary" />
-                      </div>
-                    </div>
-                    <div className="pl-4">
-                      <h4 className="display-3 text-white">Modern Interface</h4>
-                      <p className="text-white">
-                      : Flat design, characterized by its absence of gradients, shadows, and three-dimensional effects, is a hallmark of modern interfaces. Flat design elements such as flat icons, buttons, and illustrations contribute to a sleek and contemporary aesthetic.
-                      </p>
-                    </div>
-                  </div>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-success rounded-circle text-white">
-                            <i className="ni ni-satisfied" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-success">
-                            Awesome Support
-                          </h5>
-                          <p>
-                          Awesome support entails prompt and responsive communication channels that allow customers to reach out for assistance easily. Whether it's through live chat, email, phone support, or social media platforms, customers expect quick responses to their queries and concerns.
-                          </p>
-                          <a
-                            className="text-success"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                  <Card className="shadow shadow-lg--hover mt-5">
-                    <CardBody>
-                      <div className="d-flex px-3">
-                        <div>
-                          <div className="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                            <i className="ni ni-active-40" />
-                          </div>
-                        </div>
-                        <div className="pl-4">
-                          <h5 className="title text-warning">
-                            Modular Components
-                          </h5>
-                          <p>
-                            The Arctic Ocean freezes every winter and much of
-                            the sea-ice then thaws every summer, and that
-                            process will continue whatever.
-                          </p>
-                          <a
-                            className="text-warning"
-                            href="#pablo"
-                            onClick={(e) => e.preventDefault()}
-                          >
-                            Learn more
-                          </a>
-                        </div>
-                      </div>
-                    </CardBody>
-                  </Card>
-                </Col>
+            
+              <Col className="order-lg-1" lg="8">
+  <div className="d-flex px-3">
+    <div>
+      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+        <i className="ni ni-building text-primary" />
+      </div>
+    </div>
+    <div className="pl-4">
+      <h4 className="display-3 text-white">Modern Interface</h4>
+      <p className="text-white">
+        Flat design, characterized by its absence of gradients, shadows, and three-dimensional effects, is a hallmark of modern interfaces. Flat design elements such as flat icons, buttons, and illustrations contribute to a sleek and contemporary aesthetic.
+      </p>
+    </div>
+  </div>
+
+  <div className="d-flex px-3 mt-5">
+    <a href="https://hotel-booking-sites.netlify.app/" target="_blank" rel="noopener noreferrer">
+      <img
+        alt="Hotel & Spa"
+        className="img-center img-fluid"
+        src={require("assets/img/brand/hotel & Spa.jpg")}
+      />
+    </a>
+  </div>
+
+  <div className="d-flex px-3 mt-5">
+    <a href="https://fitness-lp.pages.dev/" target="_blank" rel="noopener noreferrer">
+      <img
+        alt="Gym"
+        className="img-center img-fluid"
+        src={require("assets/img/gym.jpg")}
+      />
+    </a>
+  </div>
+
+  <div className="d-flex px-3 mt-5">
+    <a href="https://react-adb-mui.netlify.app/" target="_blank" rel="noopener noreferrer">
+      <img
+        alt="Graphs"
+        className="img-center img-fluid"
+        src={require("assets/img/brand/graphs.jpg")}
+      />
+    </a>
+  </div>
+</Col>
+
               </Row>
             </Container>
             {/* SVG separator */}
@@ -500,17 +368,10 @@ class Landing extends React.Component {
           </section>
           <section className="section section-lg">
             <Container>
-              <Row className="justify-content-center text-center mb-lg">
-                <Col lg="8">
-                  <h2 className="display-3">The amazing Team</h2>
-                  <p className="lead text-muted">
-                  An amazing team is the backbone of any successful endeavor, whether it's a business, project, or initiative. Here are some characteristics that define an amazing team:
-                  </p>
-                </Col>
-              </Row>
+         
               <Row>
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
+                  {/* <div className="px-4">
                     <img
                       alt="..."
                       className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
@@ -549,53 +410,10 @@ class Landing extends React.Component {
                         </Button>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-2-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Romina Hadid</span>
-                        <small className="h6 text-muted">
-                          Marketing Strategist
-                        </small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="primary"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
+
+                {/* <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   <div className="px-4">
                     <img
                       alt="..."
@@ -636,9 +454,9 @@ class Landing extends React.Component {
                       </div>
                     </div>
                   </div>
-                </Col>
+                </Col> */}
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
+                  {/* <div className="px-4">
                     <img
                       alt="..."
                       className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
@@ -677,7 +495,7 @@ class Landing extends React.Component {
                         </Button>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </Col>
               </Row>
             </Container>
@@ -726,6 +544,76 @@ class Landing extends React.Component {
                     up the bulk of the card's content.
                   </p>
                 </Col>
+
+                <Card >
+        
+
+
+  <Row>
+                    <Col className="collapse-brand" xs="6">
+                      <Link to="/">
+                      <img alt="..."
+                      src={require("assets/img/Review.jpg")}
+                      style={{ width: "700px" }}/>
+
+                      </Link>
+                    </Col>
+                    <Col className="collapse-close" xs="6">
+                      <button className="navbar-toggler" id="navbar_global">
+                        <span />
+                        <span />
+                      </button>
+                    </Col>
+                  </Row>
+
+                    
+                  </Card>
+                  <Card >
+        
+
+
+        <Row>
+                          <Col className="collapse-brand" xs="6">
+                            <Link to="/">
+                            <img alt="..."
+                            src={require("assets/img/Review.jpg")}
+                            style={{ width: "700px" }}/>
+      
+                            </Link>
+                          </Col>
+                          <Col className="collapse-close" xs="6">
+                            <button className="navbar-toggler" id="navbar_global">
+                              <span />
+                              <span />
+                            </button>
+                          </Col>
+                        </Row>
+      
+                          
+                        </Card>
+                        <Card >
+        
+
+
+        <Row>
+                          <Col className="collapse-brand" xs="6">
+                            <Link to="/">
+                            <img alt="..."
+                            src={require("assets/img/Review.jpg")}
+                            style={{ width: "700px" }}/>
+      
+                            </Link>
+                          </Col>
+                          <Col className="collapse-close" xs="6">
+                            <button className="navbar-toggler" id="navbar_global">
+                              <span />
+                              <span />
+                            </button>
+                          </Col>
+                        </Row>
+      
+                          
+                        </Card>
               </Row>
             </Container>
             {/* SVG separator */}
@@ -747,9 +635,9 @@ class Landing extends React.Component {
           </section>
           <section className="section section-lg pt-lg-0 section-contact-us">
             <Container>
-              <Row className="justify-content-center mt--300">
-                <Col lg="8">
-                  <Card className="bg-gradient-secondary shadow">
+              <Row>
+             
+                  <Card >
                     <CardBody className="p-lg-5">
                       <h4 className="mb-1">Want to work with us?</h4>
                       <p className="mt-0">
@@ -823,8 +711,13 @@ class Landing extends React.Component {
                         </Button>
                       </div>
                     </CardBody>
+
+                    
                   </Card>
-                </Col>
+
+ 
+    
+           
               </Row>
             </Container>
           </section>
