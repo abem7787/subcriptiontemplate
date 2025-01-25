@@ -148,7 +148,7 @@ class Landing extends React.Component {
                   <img
                     alt="..."
                     className="img-fluid floating"
-                    src={require("assets/img/brand/increqimg2.png")}
+                    src={require("assets/img/ai.jpg")}
                   />
 
                 </Col>
@@ -159,7 +159,8 @@ class Landing extends React.Component {
                     </div>
                     <h3>Awesome features</h3>
                     <p>
-                    Traditional task management tools allow users to set dependencies between tasks, specifying that Task B cannot start until Task A is completed, for example. However, with dynamic task dependencies, the software takes this concept to the next level by automatically adjusting task dependencies based on real-time changes and conditions.
+
+                    Leverage AI to supercharge your business across mobile, web, and software apps. AI can automate routine tasks, offer personalized user experiences, enhance data analysis, and improve decision-making. Whether it's on mobile, web, or in-house software, AI solutions adapt to your business's needs and ensure smoother operations.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
