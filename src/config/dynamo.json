@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "white-dynamo-448920-v4",
+  "private_key_id": "6f0c489ccfe3dd4f537685887cbf1e9299b8223c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCtjJp1bhrC568g\n+9PgEIp7RdDY9TtkzVeJY9BAjvNqgwS8m3Np2XYrOKgcCdZG9iBsI5XgVKirzG7e\nOiTyL9PYwSS25OE6Yk1AvFCzK8gu7kttrIK77nSKYT5kdV/zYqqBUraYVldLghcn\nKCP+VTKhoyiOM+ElPJIf7spgewEsEv2a9NHJ/Nk4YUF1cnnHOWK8JrHi1Ujfdzj3\n/VvCBsuWU2T0zj12+BeDXkUdvY+xHtbuz6FS5ViYPO5Og9msQbP9kKKcsNJCC/Lh\nqHf83jN37PBPNYlZ+1F40eEEXLiky8RM6KW+ShnAo2PYzHBkcw+N49nwi2Ra2XIy\n6uuD2dLTAgMBAAECggEABl7XO0ubtInX9jL9l7JOaFtWC5C86boBO5bWtHf1hsm2\naSH0/kQFlW09USzUmRg8dRu9SwBwjJXdf/ohvw4duE18Boanny1ak+9rBZisKXov\nz0p6JgyJFJygiK7STdcnq8WYfvEJv/N6MW1vciI4ezxyUailMWkOyBig2c0fbDmv\n60ScPtZfXYOhk2VQnxbyEOZY4E8f1CH/TWsxBILpVCgEb4wB5oP9gnevuW0lLrNs\n3DoZbHUGRV8b2s3PQT6Whr4e1aTOxclunQL0IaDCo6dxDidbz/azZ9aRWgKz7USf\nfxacBxWzTl9Hm3MJspKDtlt9vF0HJXofGHoIzaSl6QKBgQD0pw7RhVrhJE/qnCts\nRmnZAQI/glQaWeE18zl+RwvtcdsQqPhUdH4FBQR/MlIkhM5n8Y2Tol0m5CwtxkCu\nG6fphKAcyWWOSA5Nb1LKdicvR+In43MQnQHWoKMmwj6dIQ3Tuye5p1gugH+5H88k\nVYTn+vlBVAuQgUV9V6Q+QG8ddQKBgQC1mUhYXi11RTtmNIXM79kZTUcXUmwYySSP\n52Capc1Nsa6S2As/ZhfiNAQx2SpemNQmzkMejOf2I7nJX8D7fqsyTHXDrYTl++Ju\nqpqDbiT8aSSjJcz5kqxKFZZI+IIAs3bF20Z/Jx0U/j3GvRtBUP3fr6mRABgErSOF\nVypOF2I+JwKBgEQjpzfpyWb9Yxi3yExOzDo5UrP3i48PS29oP7IQ/ZxzYo0gUpHL\nJDIntJnsnP440vgWSdU9mm4zjK5vEiKr5zddze5WlWdsYDdm8wsan01G2xE7Axg0\ncoehk+8+mIvQ4fX/oU/O8Pt6pJgd6OZ4vxyRRQzR6KqlpoIDf+YqsgflAoGAB82O\nTj29tkxDQSEAns2vhmbLpzTjcC00ZPqMLBjzuWLpHWYrFY5NeGrDw2CRcX8fnos+\nVxG25dyjHwP+RtAqiv6+EKpkC33HPPoXqY4SCMZ7zIbTR+YFgSlsS7Zh36XWdKn3\nXX9QwJYsEV4Ozb+tKO9jWdenMIw/+nrEVpaqogECgYB5xG8/QgIZfdjCxCdza2H3\nHnOByz6qrf9BcmpBtJyD+IvrvBlfwO82F2Ux+LUtmrg9gvYM8EyyVJ/ImCeCzqu2\nVrIndzzLvuJokLdjqCaMTHvVWVpWnUx74HXsIedGOyuZXCWNJxVHRDr9OON8vJHu\nGSKrrNRY8dEBeYd4UGzcog==\n-----END PRIVATE KEY-----\n",
+  "client_email": "tts-service-account@white-dynamo-448920-v4.iam.gserviceaccount.com",
+  "client_id": "108451361912768308165",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/tts-service-account%40white-dynamo-448920-v4.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
