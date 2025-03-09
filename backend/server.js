@@ -1,16 +1,16 @@
-// Import necessary modules
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const textToSpeech = require('@google-cloud/text-to-speech');
+const { Configuration, OpenAIApi } = require('openai');
 
 // Load environment variables
 dotenv.config();
 
 // Create an instance of the Express application
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // Enable CORS for all origins
 app.use(cors({ origin: '*' }));
@@ -22,80 +22,43 @@ if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
   process.exit(1);
 }
 
-// Normalize path for Windows compatibility
-const credentialsPath = path.resolve(process.env.GOOGLE_APPLICATION_CREDENTIALS);
-console.log("Loaded GOOGLE_APPLICATION_CREDENTIALS:", credentialsPath);
-
 // Initialize Google Text-to-Speech client
 const client = new textToSpeech.TextToSpeechClient({
-  keyFilename: credentialsPath,
+  keyFilename: path.resolve(process.env.GOOGLE_APPLICATION_CREDENTIALS),
 });
 
-let subscriptions = [];
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
+// Initialize OpenAI client
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
 });
+const openai = new OpenAIApi(configuration);
 
-// Route handler for GET requests to /subscription
-app.get('/subscription', (req, res) => {
+// ChatGPT API endpoint
+app.post('/api/chatgpt', async (req, res) => {
   try {
-    res.status(200).json(subscriptions);
+    const { prompt } = req.body;
+    if (!prompt) {
+      return res.status(400).json({ error: 'Prompt is required' });
+    }
+
+    // Call ChatGPT API
+    const response = await openai.createCompletion({
+      model: "text-davinci-003", // Use the appropriate model
+      prompt: prompt,
+      max_tokens: 150,
+    });
+
+    const chatResponse = response.data.choices[0].text.trim();
+
+    // Send the response back to the client
+    res.status(200).json({ response: chatResponse });
   } catch (error) {
-    console.error('Error retrieving subscription data:', error);
-    res.status(500).json({ error: 'An error occurred while retrieving subscription data' });
+    console.error('Error calling ChatGPT API:', error);
+    res.status(500).json({ error: 'Failed to generate response from ChatGPT' });
   }
 });
 
-// Route handler for POST requests to /subscription
-app.post('/subscription', (req, res) => {
-  try {
-    console.log('Received subscription request:', req.body);
-    subscriptions.push(req.body);
-    res.status(200).json({ message: 'Subscription processed successfully' });
-  } catch (error) {
-    console.error('Error processing subscription:', error);
-    res.status(500).json({ error: 'An error occurred while processing subscription' });
-  }
-});
-
-app.delete('/subscription/:id', (req, res) => {
-  try {
-    const { id } = req.params;
-    subscriptions = subscriptions.filter(subscription => subscription.id !== id);
-    res.status(200).json({ message: 'Subscription deleted successfully' });
-  } catch (error) {
-    console.error('Error deleting subscription:', error);
-    res.status(500).json({ error: 'An error occurred while deleting subscription' });
-  }
-});
-
-// Route handler for POST requests to /payment
-app.post('/payment', (req, res) => {
-  console.log('Received payment request:', req.body);
-  res.status(200).json({ message: 'Payment processed successfully' });
-});
-
-// Register routes
-app.get('/register', (req, res) => {
-  try {
-    res.status(200).json(subscriptions);
-  } catch (error) {
-    console.error('Error retrieving register data:', error);
-    res.status(500).json({ error: 'An error occurred while retrieving register data' });
-  }
-});
-
-app.post('/register', (req, res) => {
-  try {
-    res.status(200).json(subscriptions);
-  } catch (error) {
-    console.error('Error retrieving subscription data:', error);
-    res.status(500).json({ error: 'An error occurred while retrieving subscription data' });
-  }
-});
-
-// Text-to-Speech API
+// Text-to-Speech API endpoint
 app.post('/api/synthesize', async (req, res) => {
   try {
     const { text, voice, audioConfig } = req.body;
@@ -114,7 +77,7 @@ app.post('/api/synthesize', async (req, res) => {
     res.send(response.audioContent);
   } catch (error) {
     console.error('Error synthesizing speech:', error);
-    res.status(500).json({ error: 'Text-to-Speech conversion failed' });
+    res.status(500).json({ error: 'Text-to-Speech conversion failed', details: error.message });
   }
 });
 

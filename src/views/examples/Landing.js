@@ -3,6 +3,8 @@ import React from "react";
 // nodejs library that concatenates classes
 import classnames from "classnames";
 import { Link } from "react-router-dom";
+import TextToSpeech from "./TextToSpeech"
+
 
 
 // reactstrap components
@@ -36,6 +38,10 @@ class Landing extends React.Component {
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+
+
+
   render() {
     return (
       <>
@@ -64,13 +70,13 @@ class Landing extends React.Component {
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
                           <h7 className="display-3 text-white" style={{ fontSize: '2.00rem' }}>
-                          Right Angle Tech: Streamline Your Web, Mobile, and Software Development with Scalable Design Systems and Generative AI.
-                          {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
+                            Right Angle Tech: Streamline Your Web, Mobile, and Software Development with Scalable Design Systems and Generative AI.
+                            {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
                           </h7>
 
                           <p className="lead text-white">
-                          Accelerate Your Development while focusing on the efficiency boost that generative AI can bring to the development process.
-                          Our design system includes four fully customizable, pre-built pages, designed to accelerate your development process. Easily adapt the content and visuals to fit your unique needs, and you'll be up and running in no time.
+                            Accelerate Your Development while focusing on the efficiency boost that generative AI can bring to the development process.
+                            Our design system includes four fully customizable, pre-built pages, designed to accelerate your development process. Easily adapt the content and visuals to fit your unique needs, and you'll be up and running in no time.
                           </p>
                           <div className="btn-wrapper">
                             {/* <Button
@@ -82,12 +88,12 @@ class Landing extends React.Component {
                           <span className="btn-inner--text">Join Now</span>
                         </Button> */}
 
-                   <Button
-                    className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
-                   color="default"
-                    href="tel:+13478155674">
-                      <span className="btn-inner--text ml-1">
-                        Call Now</span></Button>
+                            <Button
+                              className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                              color="default"
+                              href="tel:+13478155674">
+                              <span className="btn-inner--text ml-1">
+                                Call Now</span></Button>
 
                             {/* <Button
                               className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -99,6 +105,17 @@ class Landing extends React.Component {
                                 Learn More
                               </span>
                             </Button> */}
+
+
+                            <section className="section section-lg">
+                              <Container>
+                                <Row>
+                                  <Col>
+                                    <TextToSpeech />
+                                  </Col>
+                                </Row>
+                              </Container>
+                            </section>
                           </div>
                         </Col>
                         <Col className="mb-5 mb-lg-0" md="6">
@@ -140,7 +157,7 @@ class Landing extends React.Component {
             </section>
 
           </div>
-       
+
           <section className="section section-lg">
             <Container>
               <Row className="row-grid align-items-center">
@@ -160,7 +177,7 @@ class Landing extends React.Component {
                     <h3>Awesome features</h3>
                     <p>
 
-                    Leverage AI to supercharge your business across mobile, web, and software apps. AI can automate routine tasks, offer personalized user experiences, enhance data analysis, and improve decision-making. Whether it's on mobile, web, or in-house software, AI solutions adapt to your business's needs and ensure smoother operations.
+                      Leverage AI to supercharge your business across mobile, web, and software apps. AI can automate routine tasks, offer personalized user experiences, enhance data analysis, and improve decision-making. Whether it's on mobile, web, or in-house software, AI solutions adapt to your business's needs and ensure smoother operations.
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -246,51 +263,51 @@ class Landing extends React.Component {
                         />
                       </svg>
                       <h4 className="display-3 font-weight-bold text-white">
-                      CS50 Harvard University
+                        CS50 Harvard University
                       </h4>
                       <p className="lead text-italic text-white">
-                      CS50 from Harvard University, which has provided me with a solid foundation in computer science. Equipped with essential skills in programming, algorithms, data structures, and problem-solving, which form the backbone of hands-on experience in artificial intelligence (AI) and software development, where I have applied these foundational skills to build intelligent systems to develop mobile applications, and complex real-world challenges
+                        CS50 from Harvard University, which has provided me with a solid foundation in computer science. Equipped with essential skills in programming, algorithms, data structures, and problem-solving, which form the backbone of hands-on experience in artificial intelligence (AI) and software development, where I have applied these foundational skills to build intelligent systems to develop mobile applications, and complex real-world challenges
                       </p>
                     </blockquote>
                   </Card>
                 </Col>
-                
+
                 <Col md="6">
                   <div className="pl-md-5">
-                  <img
+                    <img
                       alt="..."
                       className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
                       src={require("assets/img/brand/abe7878.jpg")}
                       style={{ width: "200px" }}
                     />
-                      <div className="text-center">
-  <h5 className="text-center mt-5">
-    <span className="d-block mb-1">Abraham Mirambeaux</span>
-    <small className="h6 text-left">
-      Software Engineer
-    </small>
-  </h5>
-</div>
+                    <div className="text-center">
+                      <h5 className="text-center mt-5">
+                        <span className="d-block mb-1">Abraham Mirambeaux</span>
+                        <small className="h6 text-left">
+                          Software Engineer
+                        </small>
+                      </h5>
+                    </div>
 
                     <h3>About Me</h3>
                     <p className="lead">
-                    As a Software Engineer and a graduate of CS50 from Harvard University, I have gained a strong foundation in computer science that enables me to build efficient, scalable, and secure software solutions. 
-    </p>
-    <p>
-    Through hands-on experience with programming languages like Python, C, and SQL, as well as mastery in algorithms, data structures, and problem-solving techniques, I focus on creating high-performance applications. My expertise allows me to develop software solutions that solve complex real-world challenges and drive impactful results.
-    </p>
-    <p>
-    I have also worked with cutting-edge technologies in artificial intelligence (AI), integrating smart systems and automation into various products. This experience has further honed my skills in designing systems that not only perform well but also scale seamlessly.
+                      As a Software Engineer and a graduate of CS50 from Harvard University, I have gained a strong foundation in computer science that enables me to build efficient, scalable, and secure software solutions.
+                    </p>
+                    <p>
+                      Through hands-on experience with programming languages like Python, C, and SQL, as well as mastery in algorithms, data structures, and problem-solving techniques, I focus on creating high-performance applications. My expertise allows me to develop software solutions that solve complex real-world challenges and drive impactful results.
+                    </p>
+                    <p>
+                      I have also worked with cutting-edge technologies in artificial intelligence (AI), integrating smart systems and automation into various products. This experience has further honed my skills in designing systems that not only perform well but also scale seamlessly.
 
-    </p>
-  
-<p className="lead">
-  Our work management software serves diverse industries, from technology and finance to healthcare, manufacturing, and education. Whether it's small startups or large enterprises, our tools are tailored to meet the unique needs of businesses of all sizes and complexities.
-</p>
+                    </p>
 
-<p>
-   Providin solutions that streamline workflows, boost productivity, and manage everything from agile software development to marketing campaign launches.
-</p>
+                    <p className="lead">
+                      Our work management software serves diverse industries, from technology and finance to healthcare, manufacturing, and education. Whether it's small startups or large enterprises, our tools are tailored to meet the unique needs of businesses of all sizes and complexities.
+                    </p>
+
+                    <p>
+                      Providin solutions that streamline workflows, boost productivity, and manage everything from agile software development to marketing campaign launches.
+                    </p>
 
 
                   </div>
@@ -301,52 +318,52 @@ class Landing extends React.Component {
           <section className="section pb-0 bg-gradient-warning">
             <Container>
               <Row className="row-grid align-items-center">
-            
-              <Col className="order-lg-1" lg="8">
-  <div className="d-flex px-3">
-    <div>
-      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-        <i className="ni ni-building text-primary" />
-      </div>
-    </div>
-    <div className="pl-4">
-      <h4 className="display-3 text-white">Modern Interface</h4>
-      <p className="text-white">
-        Flat design, characterized by its absence of gradients, shadows, and three-dimensional effects, is a hallmark of modern interfaces. Flat design elements such as flat icons, buttons, and illustrations contribute to a sleek and contemporary aesthetic.
-      </p>
-    </div>
-  </div>
 
-  <div className="d-flex px-3 mt-5">
-    <a href="https://hotel-booking-sites.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img
-        alt="Hotel & Spa"
-        className="img-center img-fluid"
-        src={require("assets/img/brand/hotel & Spa.jpg")}
-      />
-    </a>
-  </div>
+                <Col className="order-lg-1" lg="8">
+                  <div className="d-flex px-3">
+                    <div>
+                      <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
+                        <i className="ni ni-building text-primary" />
+                      </div>
+                    </div>
+                    <div className="pl-4">
+                      <h4 className="display-3 text-white">Modern Interface</h4>
+                      <p className="text-white">
+                        Flat design, characterized by its absence of gradients, shadows, and three-dimensional effects, is a hallmark of modern interfaces. Flat design elements such as flat icons, buttons, and illustrations contribute to a sleek and contemporary aesthetic.
+                      </p>
+                    </div>
+                  </div>
 
-  <div className="d-flex px-3 mt-5">
-    <a href="https://fitness-lp.pages.dev/" target="_blank" rel="noopener noreferrer">
-      <img
-        alt="Gym"
-        className="img-center img-fluid"
-        src={require("assets/img/gym.jpg")}
-      />
-    </a>
-  </div>
+                  <div className="d-flex px-3 mt-5">
+                    <a href="https://hotel-booking-sites.netlify.app/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        alt="Hotel & Spa"
+                        className="img-center img-fluid"
+                        src={require("assets/img/brand/hotel & Spa.jpg")}
+                      />
+                    </a>
+                  </div>
 
-  <div className="d-flex px-3 mt-5">
-    <a href="https://react-adb-mui.netlify.app/" target="_blank" rel="noopener noreferrer">
-      <img
-        alt="Graphs"
-        className="img-center img-fluid"
-        src={require("assets/img/brand/graphs.jpg")}
-      />
-    </a>
-  </div>
-</Col>
+                  <div className="d-flex px-3 mt-5">
+                    <a href="https://fitness-lp.pages.dev/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        alt="Gym"
+                        className="img-center img-fluid"
+                        src={require("assets/img/gym.jpg")}
+                      />
+                    </a>
+                  </div>
+
+                  <div className="d-flex px-3 mt-5">
+                    <a href="https://react-adb-mui.netlify.app/" target="_blank" rel="noopener noreferrer">
+                      <img
+                        alt="Graphs"
+                        className="img-center img-fluid"
+                        src={require("assets/img/brand/graphs.jpg")}
+                      />
+                    </a>
+                  </div>
+                </Col>
 
               </Row>
             </Container>
@@ -369,7 +386,7 @@ class Landing extends React.Component {
           </section>
           <section className="section section-lg">
             <Container>
-         
+
               <Row>
                 <Col className="mb-5 mb-lg-0" lg="3" md="6">
                   {/* <div className="px-4">
@@ -502,7 +519,7 @@ class Landing extends React.Component {
             </Container>
           </section>
           <section className="section section-lg pt-0">
-            
+
           </section>
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
@@ -510,7 +527,7 @@ class Landing extends React.Component {
                 <Col lg="10">
                   <h2 className="display-3 text-white">Create a Project Plan</h2>
                   <p className="lead text-white">
-                  Develop a detailed project plan outlining the tasks, milestones, timelines, and dependencies. Break down the project into manageable phases or iterations to facilitate execution and tracking.
+                    Develop a detailed project plan outlining the tasks, milestones, timelines, and dependencies. Break down the project into manageable phases or iterations to facilitate execution and tracking.
                   </p>
                 </Col>
               </Row>
@@ -547,15 +564,15 @@ class Landing extends React.Component {
                 </Col>
 
                 <Card >
-        
 
 
-  <Row>
+
+                  <Row>
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
-                      <img alt="..."
-                      src={require("assets/img/Review.jpg")}
-                      style={{ width: "700px" }}/>
+                        <img alt="..."
+                          src={require("assets/img/Review.jpg")}
+                          style={{ width: "700px" }} />
 
                       </Link>
                     </Col>
@@ -567,54 +584,54 @@ class Landing extends React.Component {
                     </Col>
                   </Row>
 
-                    
-                  </Card>
-                  <Card >
-        
+
+                </Card>
+                <Card >
 
 
-        <Row>
-                          <Col className="collapse-brand" xs="6">
-                            <Link to="/">
-                            <img alt="..."
-                            src={require("assets/img/Review.jpg")}
-                            style={{ width: "700px" }}/>
-      
-                            </Link>
-                          </Col>
-                          <Col className="collapse-close" xs="6">
-                            <button className="navbar-toggler" id="navbar_global">
-                              <span />
-                              <span />
-                            </button>
-                          </Col>
-                        </Row>
-      
-                          
-                        </Card>
-                        <Card >
-        
+
+                  <Row>
+                    <Col className="collapse-brand" xs="6">
+                      <Link to="/">
+                        <img alt="..."
+                          src={require("assets/img/Review.jpg")}
+                          style={{ width: "700px" }} />
+
+                      </Link>
+                    </Col>
+                    <Col className="collapse-close" xs="6">
+                      <button className="navbar-toggler" id="navbar_global">
+                        <span />
+                        <span />
+                      </button>
+                    </Col>
+                  </Row>
 
 
-        <Row>
-                          <Col className="collapse-brand" xs="6">
-                            <Link to="/">
-                            <img alt="..."
-                            src={require("assets/img/Review.jpg")}
-                            style={{ width: "700px" }}/>
-      
-                            </Link>
-                          </Col>
-                          <Col className="collapse-close" xs="6">
-                            <button className="navbar-toggler" id="navbar_global">
-                              <span />
-                              <span />
-                            </button>
-                          </Col>
-                        </Row>
-      
-                          
-                        </Card>
+                </Card>
+                <Card >
+
+
+
+                  <Row>
+                    <Col className="collapse-brand" xs="6">
+                      <Link to="/">
+                        <img alt="..."
+                          src={require("assets/img/Review.jpg")}
+                          style={{ width: "700px" }} />
+
+                      </Link>
+                    </Col>
+                    <Col className="collapse-close" xs="6">
+                      <button className="navbar-toggler" id="navbar_global">
+                        <span />
+                        <span />
+                      </button>
+                    </Col>
+                  </Row>
+
+
+                </Card>
               </Row>
             </Container>
             {/* SVG separator */}
@@ -637,88 +654,88 @@ class Landing extends React.Component {
           <section className="section section-lg pt-lg-0 section-contact-us">
             <Container>
               <Row>
-             
-                  <Card >
-                    <CardBody className="p-lg-5">
-                      <h4 className="mb-1">Want to work with us?</h4>
-                      <p className="mt-0">
-                        Your project is very important to us.
-                      </p>
-                      <FormGroup
-                        className={classnames("mt-5", {
-                          focused: this.state.nameFocused,
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-user-run" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Your name"
-                            type="text"
-                            onFocus={(e) =>
-                              this.setState({ nameFocused: true })
-                            }
-                            onBlur={(e) =>
-                              this.setState({ nameFocused: false })
-                            }
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup
-                        className={classnames({
-                          focused: this.state.emailFocused,
-                        })}
-                      >
-                        <InputGroup className="input-group-alternative">
-                          <InputGroupAddon addonType="prepend">
-                            <InputGroupText>
-                              <i className="ni ni-email-83" />
-                            </InputGroupText>
-                          </InputGroupAddon>
-                          <Input
-                            placeholder="Email address"
-                            type="email"
-                            onFocus={(e) =>
-                              this.setState({ emailFocused: true })
-                            }
-                            onBlur={(e) =>
-                              this.setState({ emailFocused: false })
-                            }
-                          />
-                        </InputGroup>
-                      </FormGroup>
-                      <FormGroup className="mb-4">
+
+                <Card >
+                  <CardBody className="p-lg-5">
+                    <h4 className="mb-1">Want to work with us?</h4>
+                    <p className="mt-0">
+                      Your project is very important to us.
+                    </p>
+                    <FormGroup
+                      className={classnames("mt-5", {
+                        focused: this.state.nameFocused,
+                      })}
+                    >
+                      <InputGroup className="input-group-alternative">
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="ni ni-user-run" />
+                          </InputGroupText>
+                        </InputGroupAddon>
                         <Input
-                          className="form-control-alternative"
-                          cols="80"
-                          name="name"
-                          placeholder="Type a message..."
-                          rows="4"
-                          type="textarea"
+                          placeholder="Your name"
+                          type="text"
+                          onFocus={(e) =>
+                            this.setState({ nameFocused: true })
+                          }
+                          onBlur={(e) =>
+                            this.setState({ nameFocused: false })
+                          }
                         />
-                      </FormGroup>
-                      <div>
-                        <Button
-                          block
-                          className="btn-round"
-                          color="default"
-                          size="lg"
-                          type="button"
-                        >
-                          Send Message
-                        </Button>
-                      </div>
-                    </CardBody>
+                      </InputGroup>
+                    </FormGroup>
+                    <FormGroup
+                      className={classnames({
+                        focused: this.state.emailFocused,
+                      })}
+                    >
+                      <InputGroup className="input-group-alternative">
+                        <InputGroupAddon addonType="prepend">
+                          <InputGroupText>
+                            <i className="ni ni-email-83" />
+                          </InputGroupText>
+                        </InputGroupAddon>
+                        <Input
+                          placeholder="Email address"
+                          type="email"
+                          onFocus={(e) =>
+                            this.setState({ emailFocused: true })
+                          }
+                          onBlur={(e) =>
+                            this.setState({ emailFocused: false })
+                          }
+                        />
+                      </InputGroup>
+                    </FormGroup>
+                    <FormGroup className="mb-4">
+                      <Input
+                        className="form-control-alternative"
+                        cols="80"
+                        name="name"
+                        placeholder="Type a message..."
+                        rows="4"
+                        type="textarea"
+                      />
+                    </FormGroup>
+                    <div>
+                      <Button
+                        block
+                        className="btn-round"
+                        color="default"
+                        size="lg"
+                        type="button"
+                      >
+                        Send Message
+                      </Button>
+                    </div>
+                  </CardBody>
 
-                    
-                  </Card>
 
- 
-    
-           
+                </Card>
+
+
+
+
               </Row>
             </Container>
           </section>
