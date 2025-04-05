@@ -107,15 +107,7 @@ class Landing extends React.Component {
                             </Button> */}
 
 
-                            <section className="section section-lg">
-                              <Container>
-                                <Row>
-                                  <Col>
-                                    <TextToSpeech />
-                                  </Col>
-                                </Row>
-                              </Container>
-                            </section>
+                       
                           </div>
                         </Col>
                         <Col className="mb-5 mb-lg-0" md="6">
@@ -362,6 +354,10 @@ class Landing extends React.Component {
                         src={require("assets/img/brand/graphs.jpg")}
                       />
                     </a>
+                  </div>
+
+                  <div className="d-flex px-3 mt-5">
+               
                   </div>
                 </Col>
 
