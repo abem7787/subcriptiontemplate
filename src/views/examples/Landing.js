@@ -70,12 +70,12 @@ class Landing extends React.Component {
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
                           <h7 className="display-3 text-white" style={{ fontSize: '2.00rem' }}>
-                          Right Angle Technologies: Enterprise-Grade Software and Generative AI Solutions.
+                            Right Angle Technologies: Enterprise-Grade Software and Generative AI Solutions.
                             {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
                           </h7>
 
                           <p className="lead text-white">
-                          Architect, build, and scale high-performance digital platforms that drive business transformation. Our full-stack expertise delivers custom web, mobile, and AI-powered applications with measurable ROI.
+                            Architect, build, and scale high-performance digital platforms that drive business transformation. Our full-stack expertise delivers custom web, mobile, and AI-powered applications with measurable ROI.
                           </p>
                           <div className="btn-wrapper">
                             {/* <Button
@@ -88,11 +88,25 @@ class Landing extends React.Component {
                         </Button> */}
 
                             <Button
-                              className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
+                              className="btn-icon ml-2"
                               color="default"
-                              href="tel:+13478155674">
-                              <span className="btn-inner--text ml-1">
-                              Schedule Consultation</span></Button>
+                              href="tel:+13478155674"
+                              style={{
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                border: '1px solid white',
+                                transition: 'all 0.3s ease'
+                              }}
+                            >
+                              <span className="btn-inner--icon">
+                                <i className="fa fa-phone mr-2" />
+                              </span>
+                              <span className="nav-link-inner--text ml-1">
+                              Schedule Consltation
+                              </span>
+                            </Button>
+
+
 
                             {/* <Button
                               className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -106,7 +120,7 @@ class Landing extends React.Component {
                             </Button> */}
 
 
-                       
+
                           </div>
                         </Col>
                         <Col className="mb-5 mb-lg-0" md="6">
@@ -168,7 +182,7 @@ class Landing extends React.Component {
                     <h3>Technology Solutions</h3>
                     <p>
 
-                    Deliver comprehensive digital transformation through:
+                      Deliver comprehensive digital transformation through:
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -215,7 +229,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                            AI & Machine Learning Integration
+                              AI & Machine Learning Integration
                             </h6>
                           </div>
                         </div>
@@ -275,7 +289,7 @@ class Landing extends React.Component {
                       <h5 className="text-center mt-5">
                         <span className="d-block mb-1">Abraham Mirambeaux</span>
                         <small className="h6 text-left">
-                        Chief Software Engineer
+                          Chief Software Engineer
                         </small>
                       </h5>
                     </div>
@@ -356,7 +370,7 @@ class Landing extends React.Component {
                   </div>
 
                   <div className="d-flex px-3 mt-5">
-               
+
                   </div>
                 </Col>
 
@@ -379,251 +393,100 @@ class Landing extends React.Component {
               </svg>
             </div>
           </section>
-          <section className="section section-lg">
-            <Container>
-
-              <Row>
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  {/* <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-1-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Ryan Tompson</span>
-                        <small className="h6 text-muted">Developer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="warning"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div> */}
-                </Col>
-
-                {/* <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-3-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">Alexander Smith</span>
-                        <small className="h6 text-muted">Designer</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="info"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </Col> */}
-                <Col className="mb-5 mb-lg-0" lg="3" md="6">
-                  {/* <div className="px-4">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-center img-fluid shadow shadow-lg--hover"
-                      src={require("assets/img/theme/team-4-800x800.jpg")}
-                      style={{ width: "200px" }}
-                    />
-                    <div className="pt-4 text-center">
-                      <h5 className="title">
-                        <span className="d-block mb-1">John Doe</span>
-                        <small className="h6 text-muted">Founder and CEO</small>
-                      </h5>
-                      <div className="mt-3">
-                        <Button
-                          className="btn-icon-only rounded-circle"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-twitter" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-facebook" />
-                        </Button>
-                        <Button
-                          className="btn-icon-only rounded-circle ml-1"
-                          color="success"
-                          href="#pablo"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <i className="fa fa-dribbble" />
-                        </Button>
-                      </div>
-                    </div>
-                  </div> */}
-                </Col>
-              </Row>
-            </Container>
-          </section>
-          <section className="section section-lg pt-0">
-
-          </section>
+     
+        
           <section className="section section-lg bg-gradient-default">
             <Container className="pt-lg pb-300">
+              {/* Process Section */}
               <Row className="text-center justify-content-center">
                 <Col lg="10">
                   <h2 className="display-3 text-white">Create a Project Plan</h2>
                   <p className="lead text-white">
-                    Develop a detailed project plan outlining the tasks, milestones, timelines, and dependencies. Break down the project into manageable phases or iterations to facilitate execution and tracking.
+                    Develop a detailed project plan outlining the tasks, milestones, timelines, and dependencies.
+                    Break down the project into manageable phases or iterations to facilitate execution and tracking.
                   </p>
                 </Col>
               </Row>
-              <Row className="row-grid mt-5">
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-settings text-primary" />
+
+              {/* Process Steps */}
+              <Row className="row-grid justify-content-center mt-5">
+                <Col lg="4" md="6" className="mb-5 mb-lg-0 d-flex flex-column align-items-center">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mb-3"
+                    style={{ width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <i className="ni ni-settings text-primary" style={{ fontSize: '1.75rem' }} />
                   </div>
-                  <h5 className="text-white mt-3">Discovery</h5>
-                  <p className="text-white mt-3">
-                  Comprehensive requirements analysis and solution architecture planning.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-ruler-pencil text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Design</h5>
-                  <p className="text-white mt-3">
-                  UX/UI design, technical specifications, and architecture diagrams.
-                  </p>
-                </Col>
-                <Col lg="4">
-                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
-                    <i className="ni ni-atom text-primary" />
-                  </div>
-                  <h5 className="text-white mt-3">Development</h5>
-                  <p className="text-white mt-3">
-                  Agile sprints with continuous integration and quality assurance.
+                  <h5 className="text-white text-center">Discovery</h5>
+                  <p className="text-white mt-2 text-center">
+                    Comprehensive requirements analysis and solution architecture planning.
                   </p>
                 </Col>
 
-                <Card >
+                <Col lg="4" md="6" className="mb-5 mb-lg-0 d-flex flex-column align-items-center">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mb-3"
+                    style={{ width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <i className="ni ni-ruler-pencil text-primary" style={{ fontSize: '1.75rem' }} />
+                  </div>
+                  <h5 className="text-white text-center">Design</h5>
+                  <p className="text-white mt-2 text-center">
+                    UX/UI design, technical specifications, and architecture diagrams.
+                  </p>
+                </Col>
 
+                <Col lg="4" md="6" className="mb-5 mb-lg-0 d-flex flex-column align-items-center">
+                  <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary mb-3"
+                    style={{ width: '80px', height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <i className="ni ni-atom text-primary" style={{ fontSize: '1.75rem' }} />
+                  </div>
+                  <h5 className="text-white text-center">Development</h5>
+                  <p className="text-white mt-2 text-center">
+                    Agile sprints with continuous integration and quality assurance.
+                  </p>
+                </Col>
+              </Row>
 
+              {/* Testimonials Header */}
+              <Row className="justify-content-center mt-7">
+                <Col lg="10" className="text-center">
+                  <h4 className="display-3 text-white">Proven Success Stories</h4>
+                  <p className="lead text-white">
+                    Here's what our clients achieved through our partnership
+                  </p>
+                </Col>
+              </Row>
 
-                  <Row>
-                    <Col className="collapse-brand" xs="6">
-                      <Link to="/">
-                        <img alt="..."
-                          src={require("assets/img/Review.jpg")}
-                          style={{ width: "700px" }} />
+              {/* Testimonial Cards - Centered */}
+              <Row className="justify-content-center">
+                <Col lg="8" className="text-center">
+                  <Card className="bg-transparent shadow border-0 my-4">
+                    <CardBody>
+                      <img
+                        alt="Testimonial 1"
+                        src={require("assets/img/Review.jpg")}
+                        className="img-fluid rounded"
+                      />
+                    </CardBody>
+                  </Card>
 
-                      </Link>
-                    </Col>
-                    <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
-                        <span />
-                        <span />
-                      </button>
-                    </Col>
-                  </Row>
+                  <Card className="bg-transparent shadow border-0 my-4">
+                    <CardBody>
+                      <img
+                        alt="Testimonial 2"
+                        src={require("assets/img/review2.jpg")}
+                        className="img-fluid rounded"
+                      />
+                    </CardBody>
+                  </Card>
 
-
-                </Card>
-                <Card >
-
-
-
-                  <Row>
-                    <Col className="collapse-brand" xs="6">
-                      <Link to="/">
-                        <img alt="..."
-                          src={require("assets/img/review2.jpg")}
-                          style={{ width: "700px" }} />
-
-                      </Link>
-                    </Col>
-                    <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
-                        <span />
-                        <span />
-                      </button>
-                    </Col>
-                  </Row>
-
-
-                </Card>
-                <Card >
-
-
-
-                  <Row>
-                    <Col className="collapse-brand" xs="6">
-                      <Link to="/">
-                        <img alt="..."
-                          src={require("assets/img/review3.jpg")}
-                          style={{ width: "700px" }} />
-
-                      </Link>
-                    </Col>
-                    <Col className="collapse-close" xs="6">
-                      <button className="navbar-toggler" id="navbar_global">
-                        <span />
-                        <span />
-                      </button>
-                    </Col>
-                  </Row>
-
-
-                </Card>
+                  <Card className="bg-transparent shadow border-0 my-4">
+                    <CardBody>
+                      <img
+                        alt="Testimonial 3"
+                        src={require("assets/img/review3.jpg")}
+                        className="img-fluid rounded"
+                      />
+                    </CardBody>
+                  </Card>
+                </Col>
               </Row>
             </Container>
             {/* SVG separator */}
@@ -733,7 +596,7 @@ class Landing extends React.Component {
           </section>
           <Download />
         </main>
-        <CardsFooter />
+        {/* <CardsFooter /> */}
       </>
     );
   }

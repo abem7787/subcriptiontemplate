@@ -10,6 +10,7 @@ import Profile from "views/examples/Profile.js";
 import Register from "views/examples/Register.js";
 import AdminPanel from "./components/Admin/AdminPanel"
 import SubscriptionEdits from "components/Subscription/SubscriptionEdits";
+import "font-awesome/css/font-awesome.min.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./assets/css/animate.min.css";
