@@ -70,13 +70,12 @@ class Landing extends React.Component {
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
                           <h7 className="display-3 text-white" style={{ fontSize: '2.00rem' }}>
-                            Right Angle Tech: Streamline Your Web, Mobile, and Software Development with Scalable Design Systems and Generative AI.
+                          Right Angle Technologies: Enterprise-Grade Software and Generative AI Solutions.
                             {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
                           </h7>
 
                           <p className="lead text-white">
-                            Accelerate Your Development while focusing on the efficiency boost that generative AI can bring to the development process.
-                            Our design system includes four fully customizable, pre-built pages, designed to accelerate your development process. Easily adapt the content and visuals to fit your unique needs, and you'll be up and running in no time.
+                          Architect, build, and scale high-performance digital platforms that drive business transformation. Our full-stack expertise delivers custom web, mobile, and AI-powered applications with measurable ROI.
                           </p>
                           <div className="btn-wrapper">
                             {/* <Button
@@ -93,7 +92,7 @@ class Landing extends React.Component {
                               color="default"
                               href="tel:+13478155674">
                               <span className="btn-inner--text ml-1">
-                                Call Now</span></Button>
+                              Schedule Consultation</span></Button>
 
                             {/* <Button
                               className="btn-white btn-icon mb-3 mb-sm-0 ml-1"
@@ -166,10 +165,10 @@ class Landing extends React.Component {
                     <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
                       <i className="ni ni-settings-gear-65" />
                     </div>
-                    <h3>Awesome features</h3>
+                    <h3>Technology Solutions</h3>
                     <p>
 
-                      Leverage AI to supercharge your business across mobile, web, and software apps. AI can automate routine tasks, offer personalized user experiences, enhance data analysis, and improve decision-making. Whether it's on mobile, web, or in-house software, AI solutions adapt to your business's needs and ensure smoother operations.
+                    Deliver comprehensive digital transformation through:
                     </p>
                     <ul className="list-unstyled mt-5">
                       <li className="py-2">
@@ -184,7 +183,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Carefully crafted components
+                              Enterprise Mobile Applications
                             </h6>
                           </div>
                         </div>
@@ -200,7 +199,7 @@ class Landing extends React.Component {
                             </Badge>
                           </div>
                           <div>
-                            <h6 className="mb-0">Amazing page examples</h6>
+                            <h6 className="mb-0">Scalable Web Platforms</h6>
                           </div>
                         </div>
                       </li>
@@ -216,7 +215,7 @@ class Landing extends React.Component {
                           </div>
                           <div>
                             <h6 className="mb-0">
-                              Super friendly support team
+                            AI & Machine Learning Integration
                             </h6>
                           </div>
                         </div>
@@ -276,7 +275,7 @@ class Landing extends React.Component {
                       <h5 className="text-center mt-5">
                         <span className="d-block mb-1">Abraham Mirambeaux</span>
                         <small className="h6 text-left">
-                          Software Engineer
+                        Chief Software Engineer
                         </small>
                       </h5>
                     </div>
@@ -532,30 +531,27 @@ class Landing extends React.Component {
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-settings text-primary" />
                   </div>
-                  <h5 className="text-white mt-3">Building tools</h5>
+                  <h5 className="text-white mt-3">Discovery</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                  Comprehensive requirements analysis and solution architecture planning.
                   </p>
                 </Col>
                 <Col lg="4">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-ruler-pencil text-primary" />
                   </div>
-                  <h5 className="text-white mt-3">Grow your market</h5>
+                  <h5 className="text-white mt-3">Design</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                  UX/UI design, technical specifications, and architecture diagrams.
                   </p>
                 </Col>
                 <Col lg="4">
                   <div className="icon icon-lg icon-shape bg-gradient-white shadow rounded-circle text-primary">
                     <i className="ni ni-atom text-primary" />
                   </div>
-                  <h5 className="text-white mt-3">Launch time</h5>
+                  <h5 className="text-white mt-3">Development</h5>
                   <p className="text-white mt-3">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                  Agile sprints with continuous integration and quality assurance.
                   </p>
                 </Col>
 
@@ -590,7 +586,7 @@ class Landing extends React.Component {
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
                         <img alt="..."
-                          src={require("assets/img/Review.jpg")}
+                          src={require("assets/img/review2.jpg")}
                           style={{ width: "700px" }} />
 
                       </Link>
@@ -613,7 +609,7 @@ class Landing extends React.Component {
                     <Col className="collapse-brand" xs="6">
                       <Link to="/">
                         <img alt="..."
-                          src={require("assets/img/Review.jpg")}
+                          src={require("assets/img/review3.jpg")}
                           style={{ width: "700px" }} />
 
                       </Link>
