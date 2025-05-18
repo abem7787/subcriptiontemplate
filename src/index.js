@@ -6,7 +6,11 @@ import "assets/vendor/font-awesome/css/font-awesome.min.css";
 import "assets/scss/argon-design-system-react.scss?v1.1.0";
 import Landing from "views/examples/Landing.js";
 import Login from "views/examples/Login.js";
+import Blog from  "./views/examples/blog.js"
+import ArticlePage from "./views/examples/ArticlePage.js";
+
 import Profile from "views/examples/Profile.js";
+
 import Register from "views/examples/Register.js";
 import AdminPanel from "./components/Admin/AdminPanel"
 import SubscriptionEdits from "components/Subscription/SubscriptionEdits";
@@ -17,15 +21,14 @@ import "./assets/css/animate.min.css";
 import "./assets/scss/light-bootstrap-dashboard-react.scss?v=2.0.0";
 import "./assets/css/demo.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-
 import AdminLayout from "layouts/Admin.js";
-
 import SubscriptionPlan from './components/Subscription/SubscriptionPlan.js';
 import SubscriptionConfirmation from './components/Subscription/SubscriptionConfirmation';
 import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
 import Dashboard from "./layouts/Dashboard";
+
 
 import BillingSetup from './layouts/BillingSetupPage';
 
@@ -40,6 +43,9 @@ function App() {
         <Route path="/login-page" element={<Login />} />
         <Route path="/profile-page" element={<Profile />} />
         <Route path="/register-page" element={<Register />} />
+        <Route path="/blog" element={<Blog/>} />
+         <Route path="blog/:id" element={<ArticlePage/>} />
+         
         <Route path="/" element={<Landing />} />
         <Route path="/subscriptionplan" element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} />
         <Route path="/SubscriptionConfirmation" element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} />
@@ -50,10 +56,8 @@ function App() {
         <Route path="/billing-setup" element={<BillingSetup/>} /> 
         <Route path="/subscription-edits" element={<SubscriptionEdits />} /> 
         <Route path="/admin/*" element={<AdminLayout/>}>
+        <Route path="AdminPanel" element={<AdminPanel setSelectedPlan={setSelectedPlan} />} />
   
-        
- 
-          <Route path="AdminPanel" element={<AdminPanel setSelectedPlan={setSelectedPlan} />} />
         </Route>
       </Routes>
     </BrowserRouter>

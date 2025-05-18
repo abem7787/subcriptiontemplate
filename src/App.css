@@ -372,3 +372,9 @@ footer {
   background-color: #3498db; /* Premium */
   transform: rotate(var(--value3));
 }
+
+
+.indent-paragraph {
+  text-indent: 2em;
+  margin-bottom: 1rem;
+}

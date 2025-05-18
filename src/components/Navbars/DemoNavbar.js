@@ -1,22 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
-
-
-// JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
-// reactstrap components
 import {
   Button,
   UncontrolledCollapse,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledDropdown,
-  Media,
-  NavbarBrand,
-  Navbar,
   NavItem,
   Nav,
+  NavbarBrand,
+  Navbar,
   Container,
   Row,
   Col,
@@ -25,24 +16,20 @@ import {
 class DemoNavbar extends React.Component {
   componentDidMount() {
     let headroom = new Headroom(document.getElementById("navbar-main"));
-    // initialise
     headroom.init();
   }
+
   state = {
     collapseClasses: "",
     collapseOpen: false,
   };
 
   onExiting = () => {
-    this.setState({
-      collapseClasses: "collapsing-out",
-    });
+    this.setState({ collapseClasses: "collapsing-out" });
   };
 
   onExited = () => {
-    this.setState({
-      collapseClasses: "",
-    });
+    this.setState({ collapseClasses: "" });
   };
 
   render() {
@@ -55,17 +42,12 @@ class DemoNavbar extends React.Component {
             id="navbar-main"
           >
             <Container>
-            <img class="w-20"   style={{ height: '150px' }}  
-                  alt="..."
-                  src={require("assets/img/brand/rightangletech.png")}
-                />
               <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-            
-                
+                Right Angle Tech
               </NavbarBrand>
-              {/* <button className="navbar-toggler" id="navbar_global">
-                <span className="navbar-toggler-icon" />
-              </button> */}
+
+              {/* Toggler removed for simplicity, you can re-enable it if needed */}
+
               <UncontrolledCollapse
                 toggler="#navbar_global"
                 navbar
@@ -76,12 +58,7 @@ class DemoNavbar extends React.Component {
                 <div className="navbar-collapse-header">
                   <Row>
                     <Col className="collapse-brand" xs="6">
-                      <Link to="/">
-                        <img
-                          alt="..."
-                          src={require("assets/img/brand/argon-react.png")}
-                        />
-                      </Link>
+                      <Link to="/">Right Angle</Link>
                     </Col>
                     <Col className="collapse-close" xs="6">
                       <button className="navbar-toggler" id="navbar_global">
@@ -91,35 +68,53 @@ class DemoNavbar extends React.Component {
                     </Col>
                   </Row>
                 </div>
-          
-                <Nav className="align-items-lg-center ml-lg-auto" navbar>
-                
-                  <NavItem className="d-none d-lg-block ml-lg-4">
-                  <Button
-  className="btn-neutral btn-icon"
-  color="default"
-  href="tel:+13478155674" // Link to call your phone number
->
-  <span className="btn-inner--icon">
-    <i className="fa fa-phone mr-2" />
-  </span>
-  <span className="nav-link-inner--text ml-1">
-    Call
-  </span>
-</Button>
 
-<Button
-  className="btn-neutral btn-icon"
-  color="default"
-  href="mailto:rightangletechbusinesssolutions@gmail.com" // Link to open the email client
->
-  <span className="btn-inner--icon">
-    <i className="fa fa-envelope mr-2" />
-  </span>
-  <span className="nav-link-inner--text ml-1">
-    Email
-  </span>
-</Button>
+                <Nav className="align-items-lg-center ml-lg-auto" navbar>
+                  <NavItem className="d-none d-lg-block ml-lg-4">
+                    <Button
+                      className="btn-neutral btn-icon mr-2"
+                      color="default"
+                      href="tel:+13478155674"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-phone mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1">Call</span>
+                    </Button>
+
+                    <Button
+                      className="btn-neutral btn-icon mr-2"
+                      color="default"
+                      href="mailto:rightangletechbusinesssolutions@gmail.com"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-envelope mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1">Email</span>
+                    </Button>
+
+                    <Button
+                      className="btn-neutral btn-icon"
+                      color="primary"
+                      tag={Link}
+                      to="/blog"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-book mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1">Blog</span>
+                    </Button>
+                             <Button
+                      className="btn-neutral btn-icon"
+                      color="primary"
+                      tag={Link}
+                      to="/"
+                    >
+                      <span className="btn-inner--icon">
+                        <i className="fa fa-home mr-2" />
+                      </span>
+                      <span className="nav-link-inner--text ml-1">Home</span>
+                    </Button>
 
                   </NavItem>
                 </Nav>
