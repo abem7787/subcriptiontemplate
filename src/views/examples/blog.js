@@ -33,44 +33,45 @@ class Blog extends React.Component {
         title: "Advance Biomass purifcations: Smart App For Rapid Infrared Technology ",
         excerpt: "Learn Existing ML Models with real science infrastructure.",
         category: "ML & Science",
-        date: "May 15, 2023",
+        date: "May 15, 2025",
         featured: true
       },
       {
         id: 2,
-        title: "Building Scalable React Applications",
-        excerpt: "Best practices for architecting React applications that scale with your user base.",
-        category: "Web Development",
-        date: "April 28, 2023"
+        title: "Community-Based Crypto/Ecosystem ",
+        excerpt: "",
+        category: "Crypto & Web Development",
+        date: "April 12, 2025",
+          featured: true
       },
-      {
-        id: 3,
-        title: "Mobile App Performance Optimization",
-        excerpt: "Techniques to dramatically improve performance in cross-platform mobile applications.",
-        category: "Mobile Development",
-        date: "April 10, 2023"
-      },
-      {
-        id: 4,
-        title: "The Future of Generative AI in Business",
-        excerpt: "How generative AI is transforming content creation and business processes.",
-        category: "Artificial Intelligence",
-        date: "March 22, 2023"
-      },
-      {
-        id: 5,
-        title: "Microservices Architecture Patterns",
-        excerpt: "Essential patterns for designing robust microservices architectures.",
-        category: "Software Architecture",
-        date: "March 5, 2023"
-      },
-      {
-        id: 6,
-        title: "DevOps Best Practices for 2023",
-        excerpt: "Streamline your development pipeline with these modern DevOps techniques.",
-        category: "DevOps",
-        date: "February 18, 2023"
-      }
+    //   {
+    //     id: 3,
+    //     title: "Mobile App Performance Optimization",
+    //     excerpt: "Techniques to dramatically improve performance in cross-platform mobile applications.",
+    //     category: "Mobile Development",
+    //     date: "April 10, 2023"
+    //   },
+    //   {
+    //     id: 4,
+    //     title: "The Future of Generative AI in Business",
+    //     excerpt: "How generative AI is transforming content creation and business processes.",
+    //     category: "Artificial Intelligence",
+    //     date: "March 22, 2023"
+    //   },
+    //   {
+    //     id: 5,
+    //     title: "Microservices Architecture Patterns",
+    //     excerpt: "Essential patterns for designing robust microservices architectures.",
+    //     category: "Software Architecture",
+    //     date: "March 5, 2023"
+    //   },
+    //   {
+    //     id: 6,
+    //     title: "DevOps Best Practices for 2023",
+    //     excerpt: "Streamline your development pipeline with these modern DevOps techniques.",
+    //     category: "DevOps",
+    //     date: "February 18, 2023"
+    //   }
     ],
     categories: [
       "All Posts",

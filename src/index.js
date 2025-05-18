@@ -45,7 +45,8 @@ function App() {
         <Route path="/register-page" element={<Register />} />
         <Route path="/blog" element={<Blog/>} />
          <Route path="blog/:id" element={<ArticlePage/>} />
-         
+          <Route path="" element={<ArticlePage/>} />
+
         <Route path="/" element={<Landing />} />
         <Route path="/subscriptionplan" element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} />
         <Route path="/SubscriptionConfirmation" element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} />

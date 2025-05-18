@@ -50,7 +50,7 @@ const articles = [
         text: "Machine learning techniques such as Support Vector Machines (SVMs), Random Forests, or Neural Networks are then trained on this labeled spectral data. These models learn to classify impurities based on subtle differences in spectral patterns. Once trained, the system can perform real time impurity detection and sorting both before and after pyrolysis.",
       },
       {
-        text: "While infrared spectrometers and ML infrastructure are not commonly used in real-world small scale biomass operations due to high costs, the project aims to simulate and validate this concept on a more accessible level. The moped engine will serve as a practical demonstration of how such a solution could be adapted to real-world applications. I will demonstrate in the near future how we can apply bio-oil in a moped with simplfied version of prolaysis.",
+        text: "While infrared spectrometers and ML infrastructure are not commonly used in real-world small scale biomass operations due to high costs, the project aims to simulate and validate this concept on a more accessible level. The moped engine will serve as a practical demonstration of how such a solution could be adapted to real-world applications. I will demonstrate in the near future how we can apply bio-oil in a moped with simplfied version of prolaysis",
       },
       {
         subtitle: "Predictive Analytics In Business",
@@ -76,8 +76,8 @@ const articles = [
   },
   {
     id: 2,
-    title: "Building Scalable React Applications",
-    content: "Full article content for building React apps...",
+    title: "Comming soon",
+    content: "Full article coming soon",
     excerpt:
       "Best practices for architecting React applications that scale with your user base.",
     category: "Web Development",
