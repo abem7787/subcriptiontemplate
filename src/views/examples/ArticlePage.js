@@ -17,72 +17,69 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 const articles = [
   {
     id: 1,
-    title:
-      "Advance Biomass purifcations: Smart App For Rapid Infrared Technology",
+    title: "Advanced Biomass Purification: Smart App for Rapid Infrared Technology",
     content: [
       {
         subtitle: "Introduction: Embracing Innovation",
-        text: "If you are a forward-thinker entrepreneur that takes practical steps to reduce commercial costs and improve efficiency, this analogy is for you. Please bear with me. Although at first glance the title induces a pilot deployment, it will suit your enterprise need. The concept, will help you learn the potential of machine learning capabilities and how it can scale within enterprise manchinary & logistics. Without overwhelming you with technical terms, let's understand the basic MVP concept as I guide you in the machine learn integration with a Smart App and Rapid Infrared Technology.",
+        text: "If you're a forward-thinking project manager taking practical steps to reduce commercial costs and improve efficiency, this analogy is for you. Although the title may sound like a pilot deployment, it suits enterprise needs. This concept will introduce the potential of machine learning (ML) and how it can scale within enterprise machinery and logistics. Without overwhelming technical terms, we'll explore a basic MVP concept integrating a Smart App with Rapid Infrared Technology."
       },
       {
         subtitle: "Setting the Context: A Science Experiment",
-        text: "  Purely a science experiment not recommend anyone to do this at home. I’m a bit of a nerd who loves solving issues with software and that is much as I go with telling you on the seed of my abilties. Haven't said that, the project entails in how we can scan biomass for inpurites to later use it for bio oil. Its important to scan unwanted metals, water, in such biomass like seaweed to indeed  demonstrate with emprical evidence that seaweed can be use for organic combustable oil. The with visuals of theses aspects will be demonstrate but in a very small scale, taking notes and video of rigerous methods in the future, so stay tune. This soley a theis for now, as its been proven to be done by ivy-leaguers and other reasearchers alike, but to get straigt to the point of what we trying to come across. In this sceario, we are choosing hardware and software technology to fuse with ml algorithims to give me us the most purest bio oil.  What is biomass and combustion, and how do we integrate infrared hardware to detect why certain  impruites may cause failure in combustion? We will also explore how an ML model can solve this issue.",
+        text: "This is purely a science experiment please do not attempt at home. As someone who loves solving issues with software, I've explored how we can scan biomass for impurities to later use it for bio-oil. It’s crucial to identify unwanted materials like metals and water in biomass (such as seaweed) to demonstrate, with empirical evidence, its viability as an organic combustible oil. The experiment will be small-scale, documented with notes and video. This is currently a thesis project, inspired by previous work from Ivy League researchers. We're choosing hardware and software tools to combine with one or two ML algorithms to identify the purest bio-oil. But what exactly is biomass and combustion, and how do we integrate infrared hardware and ML to detect impurities and improve combustion?"
       },
       {
         subtitle: "Understanding Biomass and Combustion",
-        text: "Let’s begin by asking ourselves: what is biomass? And what does it include. Includes wood, seaweed, food scraps, corn stalks, and animal waste, and simple organic materials. When processed correctly, these materials can be used for combustion to create fuel. Combustion is the chemical reaction where fuel burns in oxygen to produce heat and light burning, like wood in a fire. Fossil fuels burn similarly inside engines, producing carbon dioxide as a byproduct. Why choose biomass over fossil fuels? Biomass absorbs CO2 while combusting, offering a cleaner energy alternative.",
+        text: "What is biomass? It includes wood, seaweed, food scraps, corn stalks, and animal waste simple organic materials. When processed properly, these materials can be combusted to generate fuel. Combustion is a chemical reaction where fuel burns in oxygen to produce heat and light, much like wood in a fire. Fossil fuels work similarly but produce more carbon dioxide. Biomass, on the other hand, can absorb CO₂ during growth, offering a cleaner alternative."
       },
       {
         subtitle: "Why Choose Biomass Over Fossil Fuels?",
-        text: "Biomass, agricultural waste and organic resources, can be regrown. With fossil fuels like coal, and natural gas takes over a century to form and resources will burn out eventually and runout. On the other hand, The CO₂ released when burning biomass equals the CO₂ absorbed by growing new plants. Unlike fossil fuels, the C02 increases and becomes more of the greenhose effect making the issue longterm and immutable. The contrast of burning release CO₂ is what makes this project a bit more daring and challenging, but can apply in most business usecase.",
+        text: "Biomass, derived from agricultural waste and organic materials, can be regrown. In contrast, fossil fuels like coal and natural gas take centuries to form. CO₂ released from burning biomass is offset by the CO₂ absorbed when growing new biomass. Fossil fuels contribute to long-term greenhouse effects. Scientists continue exploring different methods to address this imbalance, with biomass being one promising solution."
       },
       {
-        subtitle: "ML and discovering the challenge of Biomass and combustion",
-        text: "To evaluate the effectiveness of this system, I will follow a scientific approach by conducting a small, in-home experimental project. The focus is on transforming solid biomass referred to as bio-oil and exploring its potential real world use cases. To keep things practical and affordable, I will demonstrate the application using a simple two stroke moped engine. This low-cost method allows learning about both the capabilities and limitations of biomass based combustion.",
+        subtitle: "ML and the Challenge of Biomass Combustion",
+        text: "To evaluate this system, I’ll conduct a small in-home experiment focused on transforming solid biomass into bio-oil. I’ll use a two-stroke moped engine as a practical and affordable combustion testbed. This experiment aims to reveal the potential of biomass in real-world use cases, highlighting both opportunities and limitations."
       },
       {
-        text: "One of the core challenges in pyrolysis the thermal decomposition of organic matter in the absence of oxygen is the presence of impurities. These can include salts, mud, water, sodium, chloride, heavy metals, and other unwanted materials that interfere with efficient combustion and can damage an engine over time.",
+        text: "One major challenge in pyrolysis (thermal decomposition without oxygen) is impurities salts, mud, water, sodium, chloride, heavy metals which interfere with combustion and can damage engines."
       },
       {
-        text: "Our proposed solution involves infrared sensing and spectroscopy, which leverages the absorption and emission of light and other radiation to detect and separate impurities. Each type of biomass emits a unique spectral signature, or fingerprint. By using sensors to scan biomass samples and collect spectral data, we can classify the material as clean, contaminated, or metal contaminated. We can use methods such as QR codes to collect and easy to scan data to comparmentalize each fingerprint",
+        text: "Our solution involves infrared sensing and spectroscopy. Each biomass sample emits a unique spectral fingerprint. By scanning samples and analyzing the light spectrum, we can classify them as clean, contaminated, or metal-contaminated. QR codes can be used for tracking and organizing this data efficiently."
       },
       {
-        text: "Machine learning techniques such as Support Vector Machines (SVMs), Random Forests, or Neural Networks are then trained on this labeled spectral data. These models learn to classify impurities based on subtle differences in spectral patterns. Once trained, the system can perform real time impurity detection and sorting both before and after pyrolysis.",
+        text: "Machine learning techniques like Support Vector Machines (SVMs), Random Forests, or Neural Networks can be trained on labeled spectral data. These models learn to detect impurities in real time, enabling smart sorting before and after pyrolysis."
       },
       {
-        text: "While infrared spectrometers and ML infrastructure are not commonly used in real-world small scale biomass operations due to high costs, the project aims to simulate and validate this concept on a more accessible level. The moped engine will serve as a practical demonstration of how such a solution could be adapted to real-world applications. I will demonstrate in the near future how we can apply bio-oil in a moped with simplfied version of prolaysis",
+        text: "Though high end infrared and ML equipment is costly, our goal is to simulate the system affordably. The moped engine allows us to assess bio-oil performance. Impurities such as water and particulates lead to incomplete combustion and injector clogging. Basic filtration and treatment can improve thermal efficiency. This project also explores how low-cost sensors and ML could help rural users monitor and improve fuel quality, bringing advanced diagnostics to small-scale producers."
       },
       {
-        subtitle: "Predictive Analytics In Business",
-        text: {
-        text: "In a manufacturing context, for instance, if an ML model identifies impurities in raw materials through infrared sensor data, it can automatically trigger predefined business logic—such as rejecting the batch, alerting a technician, or recalibrating machinery. This seamless integration of data and decision-making helps reduce downtime, improve product quality, and increase customer satisfaction.",
-        text: "Machine learning is revolutionizing business operations by making processes smarter and more efficient. Whether it's predicting customer behavior, optimizing inventory, or detecting defects such as inpurties, ML algorithms analyze historical and real-time data to automate, and sharply detect, making aproachable behavioral decisions that traditionally required human input.",
-        },
-      },
-    
-      {
-        subtitle: "In conclusion",
-        text: "Integrating machine learning into business operations is no longer just an innovation. It's a strategic necessity. By converting raw data into actionable, real time decisions, companies can handle workflows smarter, minimize unorganic error, and gain a competitive insight.",
+        subtitle: "Predictive Analytics in Business",
+        text: "In manufacturing, an ML model can detect impurities via sensor data and automatically trigger business logic such as rejecting a batch, alerting a technician, or adjusting machinery. This reduces downtime, improves quality, and enhances customer satisfaction."
       },
       {
-        text: "Whether it's enhancing quality control, personalizing user experiences, or managing supply chains, ML driven automation empowers businesses to respond more intelligently to challenges and opportunities. As the technology continues to mature, organizations that embrace machine learning today will be the ones leading their industries tomorrow.",
+        text: "ML is revolutionizing business by making processes smarter. Whether it's predicting behavior, optimizing inventory, or detecting material defects, algorithms analyze real-time and historical data to make decisions that once required human judgment."
       },
+      {
+        subtitle: "In Conclusion",
+        text: "Machine learning is no longer optional it's a strategic necessity. By turning data into real-time, actionable insights, companies can improve workflows, reduce error, and gain a competitive edge."
+      },
+      {
+        text: "Whether you're enhancing quality control, personalizing customer experiences, or managing supply chains, ML-driven automation empowers businesses to adapt and lead. Those who embrace ML today will shape the industries of tomorrow."
+      }
     ],
     excerpt:
-      "Cleaner Fuel Production, seaweed and sensor Hardware for biomass project. Now with the revolutioono of AI. We can put its logic to the test. Idenrifying inpuries and providing raw biomass for cleaner approcah for fuel. If you are a forward-thinker, and intrigue with imaginative steps to refine fuel cost, and clean air. This artcile is for you. Although the pilot deployment does not suit your enterprise taste, you can still learn the potential of machine learning capabliites, and how to scale within your bussiness logistics. Without overwhelming with      Basic MVP concept with ML intergration. What is Biomass, its not only wood chips we seen as kids in the playground, its unconvential organic waste, that aborb carbon, and agricultural byproducts. Your probally askking, oh this sound great, but if its so clean and promising why are we not using it now or why are certain countries expoermenitng further. Well here is a thoughtful explanation, high intial invesment. leading to less viable soltuion. Now that you are aware, what is Biomass. Biomass, including seaweed and other organic materials, is composed of various chemical and physical components that determine how well it performs as a fuel. Knowing these components helps optimize combustion efficiency and minimize pollutants. Here are the key elements to consider: <  <br> Theses are componds that vaporize when biomass is heated. Volatile matter ingites easly, helps sybstain combustion",
+      "Cleaner fuel production using seaweed and sensor hardware for biomass projects. With the rise of AI, we can now test its logic by identifying impurities and refining raw biomass for cleaner fuel. If you're a forward-thinker interested in cutting fuel costs and improving air quality, this article is for you. Even if pilot deployment doesn’t suit your enterprise yet, you'll learn how ML can scale logistics. Biomass isn't just playground wood chips—it's unconventional organic waste that absorbs carbon. So why aren’t we using it more widely? High initial costs make it less viable. But with AI, the solution is within reach.",
     category: "ML & Science",
     date: "May 15, 2025",
-    featured: true,
+    featured: true
   },
   {
     id: 2,
-    title: "Comming soon",
+    title: "Coming Soon",
     content: "Full article coming soon",
-    excerpt:
-      "Best practices for architecting React applications that scale with your user base.",
+    excerpt: "Best practices for architecting React applications that scale with your user base.",
     category: "Web Development",
-    date: "April 28, 2023",
-  },
+    date: "April 28, 2023"
+  }
 ];
 
 const ArticlePage = () => {
