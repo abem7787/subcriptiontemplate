@@ -28,8 +28,6 @@ import CheckoutPage from './components/Subscription/CheckoutPage';
 import ThankYou from './components/Subscription/ThankYou'; // Make sure to import ThankYouPage
 import PaymentInfo from './components/Subscription/PaymentInfo';
 import Dashboard from "./layouts/Dashboard";
-
-
 import BillingSetup from './layouts/BillingSetupPage';
 
 import "./App.css";
@@ -45,7 +43,7 @@ function App() {
         <Route path="/register-page" element={<Register />} />
         <Route path="/blog" element={<Blog/>} />
          <Route path="blog/:id" element={<ArticlePage/>} />
-          <Route path="" element={<ArticlePage/>} />
+      
 
         <Route path="/" element={<Landing />} />
         <Route path="/subscriptionplan" element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} />
