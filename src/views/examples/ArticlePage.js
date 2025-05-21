@@ -17,7 +17,7 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 const articles = [
   {
     id: 1,
-    title: "Advanced Biomass Purification: Smart App for Rapid Infrared Technology",
+    title: "Smart Project Mangment Analogy: A Practical Experiment with AI, Infrared Sensors, and Cleaner Fuel",
     content: [
       {
         subtitle: "Introduction: Embracing Innovation",
