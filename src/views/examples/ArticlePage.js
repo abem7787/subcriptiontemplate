@@ -74,10 +74,35 @@ const articles = [
   },
   {
     id: 2,
-    title: "Coming Soon",
-    content: "Full article coming soon",
+    title: "Community-Based Crypto/Ecosystem",
+    content: "Community-Based Crypto/Ecosystem",
     excerpt: "Best practices for architecting React applications that scale with your user base.",
-    category: "Web Development",
+    category: "Block Chain & Software Development", 
+
+       content: [
+      {
+      "subtitle": "Why Make a Community-Based Cryptocurrency",
+      "text": "Easy question, the advent of cryptocurrency has become the most controversial and convenient tool placed in the age of technology. We now have ways to empower communities, create new economies with, bespoke digital coins, while fostering transparency, and a controlled space for inflationary issues. A chance where communities can unite through peer-to-peer transactions and tracable recorded blockchain."
+    },
+    {
+      "subtitle": "Peer-to-Peer Lending Pools:",
+      "text": "Members can contribute to a shared pool of tokens. You can provide in-house microloans with flexible conditions and rates. Smart contracts can ensure automatic repayment schedules and penalties in case of default."
+    },
+    {
+      "subtitle": "Staking-Based Lending:",
+      "text": "Users can stake their tokens into a smart contract that can allocate to loans and other distributions. The lender can earn interest, and the borrower gets quick access to funding, all without the ties from a traditional bank. Communities can also vote for high-impact projects. The community can vote to approve interest free or low-interest loans. Completely decentralized techniques with no person in control, or a company, or bank, or anyone with a higher hat. Decisions are made collectively and ethically, right from the comfort of your handheld device or in front of a desktop."
+    },
+    {
+      "subtitle": "Token Collateralization",
+      "text": "Borrowers can lock up and load tokens as collateral to receive stablecoins or other assets, reducing risk for the community and avoiding bad debt."
+    },
+    {
+      "subtitle": "Nonprofit & Humanitarian Use Cases",
+      "text": "Community-based cryptocurrencies offer powerful tools for nonprofits and humanitarian efforts. One of the major benefits is transparent donation tracking. With blockchain technology, donors can see exactly where their funds are going, providing trust and accountability that traditional systems often lack. In times of crisis, communities can rapidly distribute emergency relief tokens to those affected, allowing them to access essentials like food, medicine, and temporary shelter without delay or bureaucracy. Additionally, these tokens can be used to reward volunteers for their time and contributions. Instead of relying solely on goodwill, organizations can issue digital tokens as incentives, which can be redeemed for goods, services, or discounts within the community—encouraging more consistent engagement. Furthermore, community led development becomes possible by using crypto to fund projects like building schools, food banks, and tech centers. Members can vote on how funds are allocated, ensuring that initiatives reflect collective priorities and needs. This decentralized, transparent model empowers communities to take charge of their own progress and resilience."
+    }
+     
+     
+    ],
     date: "April 28, 2023"
   }
 ];
