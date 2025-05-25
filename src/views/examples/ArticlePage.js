@@ -99,11 +99,15 @@ const articles = [
     {
       "subtitle": "Nonprofit & Humanitarian Use Cases",
       "text": "Community-based cryptocurrencies offer powerful tools for nonprofits and humanitarian efforts. One of the major benefits is transparent donation tracking. With blockchain technology, donors can see exactly where their funds are going, providing trust and accountability that traditional systems often lack. In times of crisis, communities can rapidly distribute emergency relief tokens to those affected, allowing them to access essentials like food, medicine, and temporary shelter without delay or bureaucracy. Additionally, these tokens can be used to reward volunteers for their time and contributions. Instead of relying solely on goodwill, organizations can issue digital tokens as incentives, which can be redeemed for goods, services, or discounts within the community—encouraging more consistent engagement. Furthermore, community led development becomes possible by using crypto to fund projects like building schools, food banks, and tech centers. Members can vote on how funds are allocated, ensuring that initiatives reflect collective priorities and needs. This decentralized, transparent model empowers communities to take charge of their own progress and resilience."
+    },
+        {
+      "subtitle": "Starting Small",
+      "text": "You can launch your own token with a modest investment of around $300. We can begin together with a pilot project, budgeting between $800–$1,000 to test the program’s frequency and engagement. By creating a small fund for members, we can utilize tools like Google Forms for voting, Gnosis Safe for shared wallet management, and Telegram or WhatsApp for group coordination. We can also encourage members to share stories and testimonials during services, and post regular updates on social media. The long-term vision is to develop a dedicated mobile wallet, allowing members to become more actively involved. The key is to start with clear goals and grow from there."
     }
      
      
     ],
-    date: "April 28, 2023"
+    date: "May 15, 2025"
   }
 ];
 
