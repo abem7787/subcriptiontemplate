@@ -17,9 +17,79 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 const articles = [
   {
     id: 1,
-    title: "A Practical Experiment with AI, Infrared Sensors, and Cleaner Fuel",
+    title: "California labor laws, maintaining ethical operations.",
     content: [
+ 
       {
+        subtitle: "Understanding California Labor Laws for Tech and Business",
+        text: "California labor law requires employers to provide overtime pay for any hours worked over 8 in a single day or 40 in a week. Non-exempt employees are also entitled to meal and rest breaks. A common legal issue arises when employers misclassify workers—especially engineers and freelancers as independent contractors, which can be a violation under AB5 law if the individual meets the criteria of an employee. Accurate time tracking is essential; any falsified or incorrect records can lead to serious litigation. Equal pay and anti-discrimination laws are strictly enforced, particularly in the tech industry, where companies face heightened scrutiny. Misclassifying workers to avoid providing benefits or paying taxes is both unethical and illegal. Disputes often arise not from malice but from project delays or miscommunication. To prevent these issues, businesses should use contract management tools like DocuSign or PandaDoc and draft detailed Service Level Agreements (SLAs) that define scope, deadlines, and accountability. Regular training for HR staff, developers, and management on labor laws, harassment prevention, and workplace ethics is also critical. Finally, consulting a legal professional familiar with Los Angeles ordinances and California labor law can help avoid costly mistakes and penalties. "
+      },
+      {
+        subtitle: "Why Many California Tech Businesses Are Relocating",
+        text: "To operate ethically and legally in Los Angeles, here are best practices for app development companies. Choose platforms that ensure transparent and tamper-proof time records for hourly employees and contractors. Tools like Toggl, Harvest, or custom-built timestamp apps with blockchain-style logging can help avoid accusations of “fake” or manipulated timestamps. Understand the ABC Test under AB5 and classify workers correctly: The worker is free from control/direction, The work performed is outside the usual business operations, The worker is engaged in an independently established trade."
+      },
+      {
+        subtitle: "Why Many California Tech Businesses Are Relocating",
+        text: "Many tech companies are leaving California due to high corporate and income taxes, strict labor laws, and the high cost of legal compliance. Common issues include frequent disputes over minor labor violations and false employee allegations such as overtime abuse or timestamp manipulation. Despite these challenges, businesses that implement strong ethical standards and reliable infrastructure can still succeed and benefit from Los Angeles’ deep talent pool and innovation ecosystem."
+      },
+      {
+        subtitle: "In conclusion, dont lose your hair",
+        text: "While California labor laws can feel overwhelming, businesses that invest in compliance, documentation, and transparency can still thrive in Los Angeles. The key is to be proactive rather than reactive. Yes, many companies are leaving the state — but that doesn't mean success isn't possible in California. With the right bespoke software tools, ethical leadership, and legal guidance, you can avoid false accusations, maintain your reputation, and grow your business the right way."
+      },
+    
+    ],
+    excerpt:
+      "Cleaner fuel production using seaweed and sensor hardware for biomass projects. With the rise of AI, we can now test its logic by identifying impurities and refining raw biomass for cleaner fuel. If you're a forward-thinker interested in cutting fuel costs and improving air quality, this article is for you. Even if pilot deployment doesn’t suit your enterprise yet, you'll learn how ML can scale logistics. Biomass isn't just playground wood chips—it's unconventional organic waste that absorbs carbon. So why aren’t we using it more widely? High initial costs make it less viable. But with AI, the solution is within reach.",
+    category: "Software & Law",
+    date: "May 15, 2025",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "California labor laws, maintaining ethical operations.",
+    category: "Software & Law", 
+
+       content: [
+
+
+  {
+      "subtitle": "Why Make a Community-Based Cryptocurrency",
+      "text": "Easy question, the advent of cryptocurrency has become the most controversial and convenient tool placed in the age of technology. We now have ways to empower communities, create new economies with, bespoke digital coins, while fostering transparency, and a controlled space for inflationary issues. A chance where communities can unite through peer-to-peer transactions and tracable recorded blockchain."
+    },
+    {
+      "subtitle": "Peer-to-Peer Lending Pools:",
+      "text": "Members can contribute to a shared pool of tokens. You can provide in-house microloans with flexible conditions and rates. Smart contracts can ensure automatic repayment schedules and penalties in case of default."
+    },
+    {
+      "subtitle": "Staking-Based Lending:",
+      "text": "Users can stake their tokens into a smart contract that can allocate to loans and other distributions. The lender can earn interest, and the borrower gets quick access to funding, all without the ties from a traditional bank. Communities can also vote for high-impact projects. The community can vote to approve interest free or low-interest loans. Completely decentralized techniques with no person in control, or a company, or bank, or anyone with a higher hat. Decisions are made collectively and ethically, right from the comfort of your handheld device or in front of a desktop."
+    },
+    {
+      "subtitle": "Token Collateralization",
+      "text": "Borrowers can lock up and load tokens as collateral to receive stablecoins or other assets, reducing risk for the community and avoiding bad debt."
+    },
+    {
+      "subtitle": "Nonprofit & Humanitarian Use Cases",
+      "text": "Community-based cryptocurrencies offer powerful tools for nonprofits and humanitarian efforts. One of the major benefits is transparent donation tracking. With blockchain technology, donors can see exactly where their funds are going, providing trust and accountability that traditional systems often lack. In times of crisis, communities can rapidly distribute emergency relief tokens to those affected, allowing them to access essentials like food, medicine, and temporary shelter without delay or bureaucracy. Additionally, these tokens can be used to reward volunteers for their time and contributions. Instead of relying solely on goodwill, organizations can issue digital tokens as incentives, which can be redeemed for goods, services, or discounts within the community—encouraging more consistent engagement. Furthermore, community led development becomes possible by using crypto to fund projects like building schools, food banks, and tech centers. Members can vote on how funds are allocated, ensuring that initiatives reflect collective priorities and needs. This decentralized, transparent model empowers communities to take charge of their own progress and resilience."
+    },
+        {
+      "subtitle": "Starting Small",
+      "text": "You can launch your own token with a modest investment of around $300. We can begin together with a pilot project, budgeting between $800–$1,000 to test the program’s frequency and engagement. By creating a small fund for members, we can utilize tools like Google Forms for voting, Gnosis Safe for shared wallet management, and Telegram or WhatsApp for group coordination. We can also encourage members to share stories and testimonials during services, and post regular updates on social media. The long-term vision is to develop a dedicated mobile wallet, allowing members to become more actively involved. The key is to start with clear goals and grow from there."
+    }
+     
+    ],
+    date: "May 15, 2025"
+  }
+  ,  {
+    id: 3,
+    title: "A Practical Experiment with AI, Infrared Sensors, and Cleaner Fuel",
+    content: "A Practical Experiment with AI, Infrared Sensors, and Cleaner Fuel",
+    excerpt: "Best practices for architecting React applications that scale with your user base.",
+    category: "ML & Software Development", 
+
+       content: [
+      
+        {
         subtitle: "Introduction: Embracing Innovation",
         text: "If you're a forward-thinking project manager taking practical steps to reduce commercial costs and improve efficiency, this analogy is for you. Although the title may sound like a pilot deployment, it suits enterprise needs. This concept will introduce the potential of machine learning (ML) and how it can scale within enterprise machinery and logistics. Without overwhelming technical terms, we'll explore a basic MVP concept integrating a Smart App with Rapid Infrared Technology."
       },
@@ -65,46 +135,6 @@ const articles = [
       {
         text: "Whether you're enhancing quality control, personalizing customer experiences, or managing supply chains, ML-driven automation empowers businesses to adapt and lead. Those who embrace ML today will shape the industries of tomorrow."
       }
-    ],
-    excerpt:
-      "Cleaner fuel production using seaweed and sensor hardware for biomass projects. With the rise of AI, we can now test its logic by identifying impurities and refining raw biomass for cleaner fuel. If you're a forward-thinker interested in cutting fuel costs and improving air quality, this article is for you. Even if pilot deployment doesn’t suit your enterprise yet, you'll learn how ML can scale logistics. Biomass isn't just playground wood chips—it's unconventional organic waste that absorbs carbon. So why aren’t we using it more widely? High initial costs make it less viable. But with AI, the solution is within reach.",
-    category: "ML & Science",
-    date: "May 15, 2025",
-    featured: true
-  },
-  {
-    id: 2,
-    title: "Community-Based Crypto/Ecosystem",
-    content: "Community-Based Crypto/Ecosystem",
-    excerpt: "Best practices for architecting React applications that scale with your user base.",
-    category: "Block Chain & Software Development", 
-
-       content: [
-      {
-      "subtitle": "Why Make a Community-Based Cryptocurrency",
-      "text": "Easy question, the advent of cryptocurrency has become the most controversial and convenient tool placed in the age of technology. We now have ways to empower communities, create new economies with, bespoke digital coins, while fostering transparency, and a controlled space for inflationary issues. A chance where communities can unite through peer-to-peer transactions and tracable recorded blockchain."
-    },
-    {
-      "subtitle": "Peer-to-Peer Lending Pools:",
-      "text": "Members can contribute to a shared pool of tokens. You can provide in-house microloans with flexible conditions and rates. Smart contracts can ensure automatic repayment schedules and penalties in case of default."
-    },
-    {
-      "subtitle": "Staking-Based Lending:",
-      "text": "Users can stake their tokens into a smart contract that can allocate to loans and other distributions. The lender can earn interest, and the borrower gets quick access to funding, all without the ties from a traditional bank. Communities can also vote for high-impact projects. The community can vote to approve interest free or low-interest loans. Completely decentralized techniques with no person in control, or a company, or bank, or anyone with a higher hat. Decisions are made collectively and ethically, right from the comfort of your handheld device or in front of a desktop."
-    },
-    {
-      "subtitle": "Token Collateralization",
-      "text": "Borrowers can lock up and load tokens as collateral to receive stablecoins or other assets, reducing risk for the community and avoiding bad debt."
-    },
-    {
-      "subtitle": "Nonprofit & Humanitarian Use Cases",
-      "text": "Community-based cryptocurrencies offer powerful tools for nonprofits and humanitarian efforts. One of the major benefits is transparent donation tracking. With blockchain technology, donors can see exactly where their funds are going, providing trust and accountability that traditional systems often lack. In times of crisis, communities can rapidly distribute emergency relief tokens to those affected, allowing them to access essentials like food, medicine, and temporary shelter without delay or bureaucracy. Additionally, these tokens can be used to reward volunteers for their time and contributions. Instead of relying solely on goodwill, organizations can issue digital tokens as incentives, which can be redeemed for goods, services, or discounts within the community—encouraging more consistent engagement. Furthermore, community led development becomes possible by using crypto to fund projects like building schools, food banks, and tech centers. Members can vote on how funds are allocated, ensuring that initiatives reflect collective priorities and needs. This decentralized, transparent model empowers communities to take charge of their own progress and resilience."
-    },
-        {
-      "subtitle": "Starting Small",
-      "text": "You can launch your own token with a modest investment of around $300. We can begin together with a pilot project, budgeting between $800–$1,000 to test the program’s frequency and engagement. By creating a small fund for members, we can utilize tools like Google Forms for voting, Gnosis Safe for shared wallet management, and Telegram or WhatsApp for group coordination. We can also encourage members to share stories and testimonials during services, and post regular updates on social media. The long-term vision is to develop a dedicated mobile wallet, allowing members to become more actively involved. The key is to start with clear goals and grow from there."
-    }
-     
      
     ],
     date: "May 15, 2025"

@@ -28,14 +28,15 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 class Blog extends React.Component {
   state = {
     articles: [
-      {
+          {
         id: 1,
-        title: "Advance Biomass purifcations: Smart App For Rapid Infrared Technology ",
-        excerpt: "Learn Existing ML Models with real science infrastructure.",
-        category: "ML & Science",
-        date: "May 15, 2025",
-        featured: true
+        title: "Los Angeles Businesses Can Navigate California Labor Laws, and Operate Ethically",
+        excerpt: "",
+        category: "Software & Law",
+        date: "May 5, 26, 2025",
+          featured: true
       },
+  
       {
         id: 2,
         title: "Community-Based Crypto/Ecosystem ",
@@ -44,6 +45,15 @@ class Blog extends React.Component {
         date: "April 12, 2025",
           featured: true
       },
+          {
+        id: 3,
+        title: "Advance Biomass purifcations: Smart App For Rapid Infrared Technology ",
+        excerpt: "Learn Existing ML Models with real science infrastructure.",
+        category: "ML & Science",
+        date: "May 15, 2025",
+        featured: true
+      },
+       
     //   {
     //     id: 3,
     //     title: "Mobile App Performance Optimization",
