@@ -12,6 +12,7 @@ import {
   Row,
   Col,
 } from "reactstrap";
+import image from "../../assets/img/brand/rightangletech.png"
 
 class DemoNavbar extends React.Component {
   componentDidMount() {
@@ -42,10 +43,14 @@ class DemoNavbar extends React.Component {
             id="navbar-main"
           >
             <Container>
-              <NavbarBrand className="mr-lg-5" to="/" tag={Link}>
-                Right Angle Tech
+              <NavbarBrand className="mr-lg-5 d-flex align-items-center" to="/" tag={Link}>
+                <img
+                  alt="Right Angle Tech Logo"
+                  src={image}
+                  style={{ height: "130px", marginRight: "10px" }}
+                />
+          
               </NavbarBrand>
-
               {/* Toggler removed for simplicity, you can re-enable it if needed */}
 
               <UncontrolledCollapse
@@ -104,7 +109,7 @@ class DemoNavbar extends React.Component {
                       </span>
                       <span className="nav-link-inner--text ml-1">Blog</span>
                     </Button>
-                             <Button
+                    <Button
                       className="btn-neutral btn-icon"
                       color="primary"
                       tag={Link}
