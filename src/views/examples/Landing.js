@@ -163,81 +163,111 @@ class Landing extends React.Component {
           </div>
 
           <section className="section section-lg">
-            <Container>
-              <Row className="row-grid align-items-center">
-                <Col className="order-md-2" md="6">
-                  <img
-                    alt="..."
-                    className="img-fluid floating"
-                    src={require("assets/img/ai.jpg")}
-                  />
+                 <Container>
+  <Row className="row-grid align-items-center">
 
-                </Col>
-                <Col className="order-md-1" md="6">
-                  <div className="pr-md-5">
-                    <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-5">
-                      <i className="ni ni-settings-gear-65" />
-                    </div>
-                    <h3>Technology Solutions</h3>
-                    <p>
+    {/* Image Column */}
+    <Col className="order-md-2" md="6">
+      <img
+        alt="AI"
+        className="img-fluid floating"
+        src={require("assets/img/ai.jpg")}
+      />
+    </Col>
 
-                      Deliver comprehensive digital transformation through:
-                    </p>
-                    <ul className="list-unstyled mt-5">
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-settings-gear-65" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              Enterprise Mobile Applications
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-html5" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">Scalable Web Platforms</h6>
-                          </div>
-                        </div>
-                      </li>
-                      <li className="py-2">
-                        <div className="d-flex align-items-center">
-                          <div>
-                            <Badge
-                              className="badge-circle mr-3"
-                              color="success"
-                            >
-                              <i className="ni ni-satisfied" />
-                            </Badge>
-                          </div>
-                          <div>
-                            <h6 className="mb-0">
-                              AI & Machine Learning Integration
-                            </h6>
-                          </div>
-                        </div>
-                      </li>
-                    </ul>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
+    {/* Milestones Column */}
+    <Col className="order-md-1" md="6">
+      <div className="pr-md-5">
+        <div className="icon icon-lg icon-shape icon-shape-success shadow rounded-circle mb-4">
+          <i className="ni ni-settings-gear-65" />
+        </div>
+
+        <h3>Software Patent Assistant Packages</h3>
+        <p>
+          Our process is broken down into clear milestones with pricing so you know exactly what to expect:
+        </p>
+
+        <div className="d-flex flex-column">
+
+          {/* Milestone 1 */}
+          <div className="card shadow-sm mb-4 border-left-primary border-3 hover-shadow">
+            <div className="card-body">
+              <div className="d-flex justify-content-between align-items-center mb-2">
+                <h5 className="card-title">Patent Consultation</h5>
+                <span className="badge badge-success p-2">$499</span>
+              </div>
+
+              <ul className="mb-0">
+                <li>Initial consultation with expert patent consultant</li>
+                <li>Evaluate software idea and compile documents</li>
+                <li>Provide patent strategy guidance</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Milestone 2 */}
+          <div className="card shadow-sm mb-4 border-left-info border-3 hover-shadow">
+            <div className="card-body">
+              <div className="d-flex justify-content-between align-items-center mb-2">
+                <h5 className="card-title">
+                  MVP Mobile, Web, Desktop, Cloud, Embedded System, Full Package + Support
+                </h5>
+                <span className="badge badge-info p-2">$10,000+</span>
+              </div>
+
+              <ul className="mb-0">
+                <li>Fullstack Development</li>
+                <li>Diagrams, flowcharts, and technical documentation included</li>
+                <li>Ongoing technical support: $40/month</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Milestone 3 */}
+          <div className="card shadow-sm mb-4 border-left-warning border-3 hover-shadow">
+            <div className="card-body">
+              <div className="d-flex justify-content-between align-items-center mb-2">
+                <h5 className="card-title">
+                  Bespoke A.I Voice Models, CRM, Review & Support
+                </h5>
+                <span className="badge badge-warning p-2">$15,000+</span>
+              </div>
+
+              <ul className="mb-0">
+                <li>Respond to patent office queries</li>
+                <li>Amend and optimize voice models</li>
+                <li>Ongoing technical and support guidance</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </Col>
+  </Row>
+
+  <style jsx>{`
+    .hover-shadow:hover {
+      transform: translateY(-5px);
+      transition: 0.3s ease;
+      box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+    }
+    .border-left-primary {
+      border-left: 5px solid #5e72e4;
+    }
+    .border-left-info {
+      border-left: 5px solid #11cdef;
+    }
+    .border-left-warning {
+      border-left: 5px solid #fb6340;
+    }
+  `}</style>
+</Container>
+
+
+
+
+
           </section>
           <section className="section bg-secondary">
             <Container>
