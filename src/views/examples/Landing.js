@@ -125,10 +125,16 @@ class Landing extends React.Component {
                         <Col className="mb-5 mb-lg-0" md="6">
                           <Card className="card-lift--hover shadow border-0">
                             <Link to="/">
-                              <CardImg class="h-10"
-                                alt="..."
-                                src={require("assets/img/brand/increqmain.png")}
-                              />
+                              <video
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                                className="img-fluid"
+                                style={{ width: '100%', borderRadius: 'inherit' }}
+                              >
+                                <source src={require("assets/video/ourmarketingvideo.mp4")} type="video/mp4" />
+                              </video>
                             </Link>
                           </Card>
                         </Col>
