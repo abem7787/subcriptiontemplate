@@ -6,36 +6,28 @@ import { motion } from 'framer-motion';
 import '../../App.css';
 
 export default function LeadCapture() {
-  const features = [
+  const botFeatures = [
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
-      ),
-      title: "AI-Powered Calling",
-      description: "Vapi AI handles discovery calls with natural, human-like conversation that builds immediate trust."
+      icon: "n8n",
+      title: "Intelligent Orchestration",
+      description: "Architect complex, high-performance workflows that seamlessly bridge the gap between initial capture and final conversion with absolute precision."
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><circle cx="12" cy="12" r="6" /><circle cx="12" cy="12" r="2" /></svg>
-      ),
-      title: "Smart Qualification",
-      description: "Gemini AI analyzes every conversation in real-time to identify high-intent buying signals."
+      icon: "Vapi",
+      title: "Human-Centric Voice AI",
+      description: "Deploy sophisticated voice synthesis that delivers a truly organic conversation experience, ensuring your prospects feel understood in real-time."
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 14 4-4" /><path d="M3.34 19a10 10 0 1 1 17.32 0" /><path d="m9.01 19 2.45-2.45a2 2 0 0 1 2.83 0L16.74 19" /></svg>
-      ),
-      title: "Automated Follow-ups",
-      description: "Seamlessly transition qualified leads into your CRM with automated, personalized next steps."
+      icon: "Gemini",
+      title: "Neural Intent Analysis",
+      description: "Leverage advanced cognitive models to extract deep strategic insights from every interaction, transforming raw dialogue into high-value sales results."
     }
   ];
 
-  const steps = [
-    { number: "01", title: "Capture", desc: "Leads enter through your custom forms or integrations." },
-    { number: "02", title: "Connect", desc: "Our AI assistant initiates an outbound call within seconds." },
-    { number: "03", title: "Qualify", desc: "Sophisticated AI models evaluate lead quality and intent." },
-    { number: "04", title: "Close", desc: "High-value prospects are booked directly into your calendar." }
-  ];
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -45,11 +37,6 @@ export default function LeadCapture() {
         staggerChildren: 0.2
       }
     }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
   };
 
   return (
@@ -95,6 +82,17 @@ export default function LeadCapture() {
                 </a>
               </motion.div>
             </motion.div>
+          </div>
+        </section>
+
+        {/* Bot Tech Features Section */}
+        <section className="pb-24">
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {botFeatures.map((feature, index) => (
+                <FeatureCard key={index} {...feature} />
+              ))}
+            </div>
           </div>
         </section>
 
