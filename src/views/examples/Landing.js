@@ -106,6 +106,25 @@ class Landing extends React.Component {
                             </Button>
 
 
+<Button
+                              className="btn-icon ml-2"
+                              color="info"
+                              to="/lead-capture"
+                              tag={Link}
+                              style={{
+                                backgroundColor: 'transparent',
+                                color: 'white',
+                                border: '1px solid white',
+                                transition: 'all 0.3s ease'
+                              }}
+                            >
+                              <span className="btn-inner--icon">
+                                <i className="fa fa-comment mr-2" />
+                              </span>
+                              <span className="nav-link-inner--text ml-1">
+                              Chat with our A.I Assistant
+                              </span>
+                            </Button>
 
                             {/* <Button
                               className="btn-white btn-icon mb-3 mb-sm-0 ml-1"

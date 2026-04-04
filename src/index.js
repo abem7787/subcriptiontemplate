@@ -9,6 +9,8 @@ import Login from "views/examples/Login.js";
 import Blog from  "./views/examples/blog.js"
 import ArticlePage from "./views/examples/ArticlePage.js";
 
+import LeadCapture from "./views/examples/LeadCapture.js";
+
 import Profile from "views/examples/Profile.js";
 
 import Register from "views/examples/Register.js";
@@ -45,6 +47,7 @@ function App() {
          <Route path="blog/:id" element={<ArticlePage/>} />
       
 
+        <Route path="/lead-capture" element={<LeadCapture />} />
         <Route path="/" element={<Landing />} />
         <Route path="/subscriptionplan" element={<SubscriptionPlan setSelectedPlan={setSelectedPlan} />} />
         <Route path="/SubscriptionConfirmation" element={<SubscriptionConfirmation setSelectedPlan={setSelectedPlan} />} />
