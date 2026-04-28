@@ -171,7 +171,7 @@ class Landing extends React.Component {
                               <video
                                 autoPlay
                                 loop
-                                muted
+                                controls
                                 playsInline
                                 className="img-fluid"
                                 style={{ width: '100%', borderRadius: 'inherit' }}
