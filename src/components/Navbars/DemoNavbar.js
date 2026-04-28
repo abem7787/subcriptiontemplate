@@ -90,7 +90,7 @@ class DemoNavbar extends React.Component {
                     <Button
                       className="btn-neutral btn-icon mr-2"
                       color="default"
-                      href="mailto:rightangletechbusinesssolutions@gmail.com"
+                      href="mailto:rightangletechbusinesssolution@gmail.com"
                     >
                       <span className="btn-inner--icon">
                         <i className="fa fa-envelope mr-2" />

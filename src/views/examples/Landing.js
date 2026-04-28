@@ -3,6 +3,7 @@ import React from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 import TextToSpeech from "./TextToSpeech"
+import axios from "axios";
 
 
 
@@ -31,12 +32,44 @@ import CardsFooter from "components/Footers/CardsFooter.js";
 import Download from "../IndexSections/Download.js";
 
 class Landing extends React.Component {
-  state = {};
+  state = {
+    name: "",
+    email: "",
+    message: ""
+  };
   componentDidMount() {
     document.documentElement.scrollTop = 0;
     document.scrollingElement.scrollTop = 0;
     this.refs.main.scrollTop = 0;
   }
+
+  handleSendMessage = async () => {
+    const { name, email, message } = this.state;
+    
+    if (!name || !email || !message) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    try {
+      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5001";
+      const response = await axios.post(`${apiUrl}/api/contact`, {
+        name,
+        email,
+        message
+      });
+
+      if (response.data.success) {
+        alert("Message sent successfully!");
+        this.setState({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("An error occurred. Please check if the server is running.");
+    }
+  };
 
 
 
@@ -101,7 +134,7 @@ class Landing extends React.Component {
                                 <i className="fa fa-phone mr-2" />
                               </span>
                               <span className="nav-link-inner--text ml-1">
-                              Schedule Consltation
+                              Schedule Consultation
                               </span>
                             </Button>
 
@@ -565,6 +598,8 @@ class Landing extends React.Component {
                         <Input
                           placeholder="Your name"
                           type="text"
+                          value={this.state.name}
+                          onChange={(e) => this.setState({ name: e.target.value })}
                           onFocus={(e) =>
                             this.setState({ nameFocused: true })
                           }
@@ -588,6 +623,8 @@ class Landing extends React.Component {
                         <Input
                           placeholder="Email address"
                           type="email"
+                          value={this.state.email}
+                          onChange={(e) => this.setState({ email: e.target.value })}
                           onFocus={(e) =>
                             this.setState({ emailFocused: true })
                           }
@@ -601,10 +638,12 @@ class Landing extends React.Component {
                       <Input
                         className="form-control-alternative"
                         cols="80"
-                        name="name"
+                        name="message"
                         placeholder="Type a message..."
                         rows="4"
                         type="textarea"
+                        value={this.state.message}
+                        onChange={(e) => this.setState({ message: e.target.value })}
                       />
                     </FormGroup>
                     <div>
@@ -614,6 +653,7 @@ class Landing extends React.Component {
                         color="default"
                         size="lg"
                         type="button"
+                        onClick={this.handleSendMessage}
                       >
                         Send Message
                       </Button>

@@ -3,7 +3,9 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
 const textToSpeech = require('@google-cloud/text-to-speech');
-const { Configuration, OpenAIApi } = require('openai');
+const { OpenAI } = require('openai');
+
+const { Resend } = require('resend');
 
 // Load environment variables
 dotenv.config();
@@ -12,9 +14,51 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3001;
 
-// Enable CORS for all origins
-app.use(cors({ origin: '*' }));
+// Initialize Resend
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+// Initialize OpenAI client
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
+
+// Enable CORS - in production, you should restrict this to your actual frontend URL
+const corsOptions = {
+  origin: process.env.FRONTEND_URL || '*',
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Contact Form API endpoint
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { name, email, message } = req.body;
+    if (!name || !email || !message) {
+      return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    const { data, error } = await resend.emails.send({
+      from: 'Contact Form <onboarding@resend.dev>', // Resend default for unverified domains
+      to: ['rightangletechbusinesssolution@gmail.com'],
+      subject: `New Project Inquiry from ${name}`,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong></p>
+             <p>${message}</p>`,
+    });
+
+    if (error) {
+      console.error('Resend Error:', error);
+      return res.status(400).json({ error });
+    }
+
+    res.status(200).json({ success: true, data });
+  } catch (error) {
+    console.error('Server Error:', error);
+    res.status(500).json({ error: 'Failed to send message' });
+  }
+});
 
 // Ensure GOOGLE_APPLICATION_CREDENTIALS is properly loaded
 if (!process.env.GOOGLE_APPLICATION_CREDENTIALS) {
@@ -27,12 +71,6 @@ const client = new textToSpeech.TextToSpeechClient({
   keyFilename: path.resolve(process.env.GOOGLE_APPLICATION_CREDENTIALS),
 });
 
-// Initialize OpenAI client
-const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
 // ChatGPT API endpoint
 app.post('/api/chatgpt', async (req, res) => {
   try {
@@ -42,13 +80,13 @@ app.post('/api/chatgpt', async (req, res) => {
     }
 
     // Call ChatGPT API
-    const response = await openai.createCompletion({
-      model: "text-davinci-003", // Use the appropriate model
-      prompt: prompt,
+    const response = await openai.chat.completions.create({
+      model: "gpt-3.5-turbo", // Use the appropriate model
+      messages: [{ role: "user", content: prompt }],
       max_tokens: 150,
     });
 
-    const chatResponse = response.data.choices[0].text.trim();
+    const chatResponse = response.choices[0].message.content.trim();
 
     // Send the response back to the client
     res.status(200).json({ response: chatResponse });
