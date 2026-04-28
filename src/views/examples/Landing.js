@@ -3,7 +3,7 @@ import React from "react";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
 import TextToSpeech from "./TextToSpeech"
-import axios from "axios";
+import emailjs from "@emailjs/browser";
 
 
 
@@ -51,23 +51,33 @@ class Landing extends React.Component {
       return;
     }
 
-    try {
-      const apiUrl = process.env.REACT_APP_API_URL || "http://localhost:5001";
-      const response = await axios.post(`${apiUrl}/api/contact`, {
-        name,
-        email,
-        message
-      });
+    // These IDs come from your EmailJS dashboard
+    const SERVICE_ID = "service_oye8ims"; 
+    const TEMPLATE_ID = "template_qkp6rlv"; 
+    const PUBLIC_KEY = "XuGin8W23JakIwEdw"; // Updated with user's key
 
-      if (response.data.success) {
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_email: "rightangletechbusinesssolution@gmail.com"
+    };
+
+    try {
+      const result = await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        templateParams,
+        PUBLIC_KEY
+      );
+
+      if (result.status === 200) {
         alert("Message sent successfully!");
         this.setState({ name: "", email: "", message: "" });
-      } else {
-        alert("Failed to send message. Please try again.");
       }
     } catch (error) {
-      console.error("Error sending message:", error);
-      alert("An error occurred. Please check if the server is running.");
+      console.error("EmailJS Error:", error);
+      alert("An error occurred. Make sure you've added your EmailJS keys to the code.");
     }
   };
 
