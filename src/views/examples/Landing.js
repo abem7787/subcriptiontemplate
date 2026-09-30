@@ -117,7 +117,7 @@ class Landing extends React.Component {
                           </h7>
 
                           <p className="lead text-white">
-                            Architect, build, and scale high-performance digital platforms that drive business transformation. Our full-stack expertise delivers custom web, mobile, and AI-powered applications with measurable ROI.
+                            Architect, build, and scale high-performance digital platforms that drive business transformation. Our full-stack expertise delivers custom web, mobile, and (Super Intellgence) SI-powered applications with measurable ROI.
                           </p>
                           <div className="btn-wrapper">
                             {/* <Button
@@ -220,7 +220,7 @@ class Landing extends React.Component {
       <img
         alt="AI"
         className="img-fluid floating"
-        src={require("assets/img/ai.jpg")}
+        src={require("assets/img/si.jpg")}
       />
     </Col>
 
@@ -277,7 +277,7 @@ class Landing extends React.Component {
             <div className="card-body">
               <div className="d-flex justify-content-between align-items-center mb-2">
                 <h5 className="card-title">
-                  Bespoke A.I Voice Models, CRM, Review & Support
+                  Bespoke S.I Voice Models, CRM, Review & Support
                 </h5>
                 <span className="badge badge-warning p-2">$15,000+</span>
               </div>
