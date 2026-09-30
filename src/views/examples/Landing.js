@@ -112,7 +112,7 @@ class Landing extends React.Component {
                       <Row lg="2">
                         <Col className="mb-5 mb-md-5" md="6">
                           <h7 className="display-3 text-white" style={{ fontSize: '2.00rem' }}>
-                            Right Angle Technologies: Enterprise-Grade Software and Generative AI Solutions.
+                            Right Angle Technologies: Enterprise-Grade Software and SI Solutions.
                             {/* <span>— Featuring Practical, Ready-to-Use Examples</span> */}
                           </h7>
 
